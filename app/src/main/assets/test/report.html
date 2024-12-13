@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大五人格测评报告</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                margin: 0 !important;
+            }
+        }
+
+        @font-face {
+            font-family: "custom";
+            src: url("https://storage.iquizoo.com/static/font/DIN-Pro-Regular-2.otf"); /*IE9*/
+        }
+
+        @font-face {
+            font-family: "PingFang";
+            src: url("https://storage.iquizoo.com/static/font/PingFang Medium.otf"); /*IE9*/
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: PingFang;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .page {
+            width: 1190px;
+            height: 1682px;
+             margin: 0 !important;
+            position: relative;
+            padding: 38px 80px 50px;
+            background-image: url("https://storage.iquizoo.com/static/img/report/overall2/page-back.png");
+            background-size: 100% 100%;
+        }
+
+        .page-content {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #999999;
+            border-top: none;
+            border-bottom: none;
+            position: relative;
+            padding-top: 62px;
+        }
+
+        .page-pagination {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            background: #9CCDFF;
+            opacity: 0.5;
+            font-weight: bold;
+            font-size: 32px;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: "custom";
+        }
+	</style>
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .jbetween {
+            justify-content: space-between;
+        }
+
+        .jcenter {
+            justify-content: center;
+        }
+
+        .acenter {
+            align-items: center;
+        }
+
+        .jaround {
+            justify-content: space-around;
+        }
+
+        .jend {
+            justify-content: end;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .gap {
+            gap: var(--gap);
+        }
+	</style>
+    <style>
+        .personality .page-content {
+            padding: 0 54px;
+        }
+
+        .personality-title {
+            font-size: 48px;
+            color: #000;
+            position: relative;
+            border-bottom: 2px dotted linear-gradient(45deg, #1AADFD, #29D9F8);
+            text-align: center;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .personality-title::before {
+            content: "";
+            display: inline-block;
+            background: var(--url, url('https://cdn.iquizoo.com/static/img/report/thebigfive/personality-title.png')) no-repeat;
+            height: 56px;
+            width: 56px;
+            background-size: 56px;
+            margin-right: 10px;
+        }
+
+        .personality-title span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .personality-title span:before {
+            content: "";
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-image: linear-gradient(90deg, transparent 0%, transparent 50%, rgba(26, 173, 253, 1) 50%, rgba(41, 217, 248, 1) 100%);
+            background-size: 6px 3px;
+            background-repeat: repeat-x;
+        }
+
+        .personality-body-subtitle {
+            font-size: 32px;
+            color: #444444;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            margin: 40px 0;
+        }
+
+        .personality-body-subtitle::before {
+            content: "";
+            display: inline-block;
+            background: var(--url, url('https://cdn.iquizoo.com/static/img/report/thebigfive/analysis-subtitle.png')) no-repeat;
+            height: 40px;
+            width: 40px;
+            background-size: 40px;
+            margin-right: 12px;
+        }
+
+        .analysis-text {
+            color: #0E1D42;
+            font-size: 22px;
+            line-height: 33px;
+        }
+
+        .result-text span:nth-child(1) {
+            color: #000000;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .result-text span:nth-child(2) {
+            color: #4A5571;
+            font-size: 22px;
+        }
+
+        .result-text {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .result-table {
+            background: #E1F0FF;
+            border-radius: 16px;
+            padding: 12px;
+            width: calc(100% + 20px);
+            margin-left: -20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-table-tr {
+            display: flex;
+            gap: 22px;
+        }
+
+        .result-table-tr .result-table-td,
+        .result-table-tr .result-table-th {
+            flex: 1;
+        }
+
+        .result-table-tr .result-table-td:nth-child(2),
+        .result-table-tr .result-table-th:nth-child(2) {
+            flex: 0.5;
+        }
+
+
+        .result-table-th {
+            background-color: #fff;
+            border-radius: 8px;
+            flex: 1;
+            display: flex;
+            align-items: end;
+            height: 86px;
+            padding: 12px;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .result-table-th img {
+            width: 52px;
+            height: 62px;
+        }
+
+        .result-table-th-text {
+            font-size: 22px;
+            color: #2F9FFF;
+            border-radius: 20px;
+            padding: 2px 30px;
+            font-weight: 500;
+            border: 2px solid #2F9FFF;
+        }
+
+        .result-table-td {
+            background-color: #fff;
+            border-radius: 8px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            height: 78px;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+
+        .td-text {
+            font-size: 22px;
+            color: #0E1D42;
+            padding-bottom: 4px;
+            background-image: linear-gradient(90deg, transparent 0%, transparent 70%, rgba(26, 173, 253, 1) 70%, rgba(41, 217, 248, 1) 100%);
+            background-size: 8px 1px;
+            background-repeat: repeat-x;
+            background-position: left bottom;
+        }
+
+        .td-text-small {
+            font-size: 20px;
+            color: #0E1D42;
+        }
+
+        .progress {
+            width: 164px;
+            height: 16px;
+            background-color: #EEEEEE;
+            position: relative;
+            border-radius: 100px;
+        }
+
+        .progress-value {
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(var(--progress) / 100 * 164px);
+            height: 16px;
+            background-color: var(--progress-color, #F8C040);
+        }
+
+        .scoreSituation .page-content {
+            padding: 58px 38px;
+        }
+
+        .scoreSituation-title {
+            font-size: 36px;
+            color: #000000;
+            font-weight: 600;
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .scoreSituation-title span {
+            position: relative;
+			z-index: 2;
+		}
+
+        .scoreSituation-title::after {
+            position: absolute;
+            top: calc(50% - 2px);
+            left: -10px;
+            content: "";
+            display: inline-block;
+            width: 292px;
+            height: 12px;
+            background: linear-gradient(90deg, #1AADFD 0%, #29D9F8 100%);
+            border-radius: 8px 8px 8px 8px;
+            filter: blur(8px);
+        }
+
+        .advantage-content {
+            display: flex;
+            margin-top: 36px;
+        }
+
+        .advantage-content-label {
+            width: 196px;
+            flex-shrink: 0;
+            font-size: 28px;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        .advantage-content-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .advantage-content-items img {
+            width: 108px;
+            height: 48px;
+        }
+
+        .advantage-items-desc {
+            margin: 40px 28px 0 28px;
+        }
+
+        .desc-text-box {
+            width: 272px;
+            height: 180px;
+            text-align: justify;
+            padding: 54px 14px 14px;
+            font-size: 20px;
+            color: #333333;
+            line-height: 23px;
+            border-radius: 16px 16px 16px 16px;
+            border: 3px dashed var(--color);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .desc-text-box .dtb-label {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 34px 0 14px;
+            text-align: left;
+            color: #fff;
+            background: var(--color);
+            font-weight: 600;
+            font-size: 22px;
+            position: absolute;
+            left: -3px;
+            top: -3px;
+            border-radius: 16px 0 40px 0;
+        }
+
+        .desc-text-box .dtb-label img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        .advantage-items-desc {
+            display: flex;
+            flex-direction: column;
+            gap: 64px
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+        }
+
+        .desc-item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .desc-item {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .item-progress {
+            width: 396px;
+            height: 32px;
+            border-radius: 100px;
+            margin-right: 16px;
+            background: #F0F0F0;
+            box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.1), inset 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+            padding: 4px;
+        }
+
+        .item-progress-value {
+            width: 0;
+            height: 100%;
+            border-radius: 100px;
+            background-color: var(--color);
+            background-image: repeating-linear-gradient(90deg, transparent 0%, transparent 90%, #fff 90%, #fff 100%);
+            background-size: 26.8px 24px;
+        }
+
+        .item-name,
+        .item-scode {
+            color: #000000;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .result-charts {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .result-charts img {
+            width: 335px;
+            position: absolute;
+            top: 37px;
+            left: 301px;
+        }
+
+		.result-score-desc{
+            font-weight: 500;
+            font-size: 18px;
+            color: #999999;
+            line-height: 26px;
+            text-align: center;
+            margin: 15px auto 40px;
+		}
+	</style>
+    <script src="https://cdn.iquizoo.com/static/js/jquery/jquery-1.8.3.min.js"></script>
+    <script src="https://cdn.iquizoo.com/static/js/echarts.min-5.5.0.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="page personality">
+        <div class="page-content">
+            <div class="personality-title">
+                <span>大五人格测评报告</span>
+            </div>
+            <div class="personality-body">
+                <div class="analysis-text">
+                    人格是指一个人对自己、他人及环境的态度与行为倾向。本测评基于大五人格模型，涵盖外倾性、宜人性、尽责性、神经质性和开放性。这些维度与学生身心健康及未来职业发展密切相关，帮助学生了解自我特点和潜在发展方向。
+                </div>
+                <div class="personality-body-subtitle"
+                     style="--url:url('https://cdn.iquizoo.com/static/img/report/thebigfive/result-subtitle.png')">测评结果
+                </div>
+                <div class="result-content">
+                    <div class="result-charts" style="width: 100%; height: 400px;">
+                        <img src="https://storage.iquizoo.com/static/img/report/thebigfive/personality-char.png" alt="">
+                        <div style="width: 100%; height: 100%;"></div>
+                    </div>
+                    <p class="result-score-desc">分数范围：4-20分</p>
+                    <div class="result-text">
+                        <span>总的来说：</span>
+                        <span> #用户#的外向型得分为3.5分，宜人性得分为4.3分，开放性得分为4.5分，得分较高；神经质得分为2分，尽责性得分为2分；得分较低。</span>
+                    </div>
+                    <div class="result-table">
+                        <div class="result-table-tr">
+                            <div class="result-table-th">
+                                <img src="https://cdn.iquizoo.com/static/img/report/thebigfive/result-table-down.png"/>
+                                <div class="result-table-th-text">低分者的人格特质</div>
+                            </div>
+                            <div class="result-table-th">
+                                <div class="result-table-th-text">得分</div>
+                            </div>
+                            <div class="result-table-th">
+                                <img src="https://cdn.iquizoo.com/static/img/report/thebigfive/result-table-up.png"/>
+                                <div class="result-table-th-text" style="background-color: #2F9FFF;color: #fff;">高分者的人格特质</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-pagination">1</div>
+        </div>
+    </div>
+    <div class="page scoreSituation">
+        <div class="page-content">
+            <div class="personality-body-subtitle">各维度得分情况：</div>
+            <div class="advantage-content">
+                <div class="advantage-content-label">优势人格特征：</div>
+                <div class="advantage-content-items">
+                    <img/>
+                </div>
+            </div>
+            <div class="advantage-items-desc">
+                <div class="advantage-item">
+                    <div class="desc-text-box">
+                        <div class="dtb-label">
+                            5.开放性
+                            <img src="https://cdn.iquizoo.com/static/img/report/thebigfive/personality-star.png" alt="">
+                        </div>
+                        这些维度反映你的自律性和责任感，包括对任务的条理性、执行效率以及对结果的负责程度。
+                    </div>
+                    <div class="desc-item-list">
+                        <div class="desc-item">
+                            <span class="item-name">社交：</span>
+                            <div class="item-progress">
+                                <div class="item-progress-value"></div>
+                            </div>
+                            <span class="item-scode">3.01</span>
+                        </div>
+
+                        <div class="desc-item">
+                            <span class="item-name">果断：</span>
+                            <div class="item-progress">
+                                <div class="item-progress-value"></div>
+                            </div>
+                            <span class="item-scode">3.01</span>
+                        </div>
+                        <div class="desc-item">
+                            <span class="item-name">活力：</span>
+                            <div class="item-progress">
+                                <div class="item-progress-value"></div>
+                            </div>
+                            <span class="item-scode">3.01</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="page-pagination">2</div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var CommonReportData = [{"AbilityId":287050436579444,"AbilityName":"易变","AbilityDescription":"情绪不稳定，易怒或愤怒，难以控制情绪冲动","AbilityType":2,"AbilityCode":"BFAS_Volatility","PreAbilityId":287050436579437,"PreAbility":{"AbilityId":287050436579437,"AbilityName":"神经质","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Neuroticism","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"神经质","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估情感的调节能力和情绪的不稳定性。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B150%C3%97150.png","Color":"#1c97f5","AbilityCode":"Neuroticism","AbilityType":0,"Id":287050436579437,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:40:25","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"易变","AbilityClassify":0,"ShortDescription":null,"LongDescription":"情绪不稳定，易怒或愤怒，难以控制情绪冲动","ParentId":287050436579437,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"BFAS_Volatility","AbilityType":0,"Id":287050436579444,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T15:42:16","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746472867123909,"AbilityName":"焦虑","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Anxiety","PreAbilityId":287050436579437,"PreAbility":{"AbilityId":287050436579437,"AbilityName":"神经质","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Neuroticism","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"神经质","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估情感的调节能力和情绪的不稳定性。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B150%C3%97150.png","Color":"#1c97f5","AbilityCode":"Neuroticism","AbilityType":0,"Id":287050436579437,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:40:25","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"焦虑","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436579437,"LevelNumber":2,"Icon":"/content/ability/d225273e-fc23-47a9-ab5a-2a1d76ae8c07.png","Color":"#0D8BF2","AbilityCode":"Anxiety","AbilityType":0,"Id":746472867123909,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:25:52","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746472973189573,"AbilityName":"抑郁","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Depression","PreAbilityId":287050436579437,"PreAbility":{"AbilityId":287050436579437,"AbilityName":"神经质","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Neuroticism","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"神经质","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估情感的调节能力和情绪的不稳定性。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B150%C3%97150.png","Color":"#1c97f5","AbilityCode":"Neuroticism","AbilityType":0,"Id":287050436579437,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:40:25","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"抑郁","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436579437,"LevelNumber":2,"Icon":"/content/ability/fe5f5b8d-d186-4501-8c15-6ace65146956.png","Color":"#0D8BF2","AbilityCode":"Depression","AbilityType":0,"Id":746472973189573,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:26:18","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579437,"AbilityName":"神经质","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Neuroticism","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"神经质","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估情感的调节能力和情绪的不稳定性。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B150%C3%97150.png","Color":"#1c97f5","AbilityCode":"Neuroticism","AbilityType":0,"Id":287050436579437,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:40:25","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746473208816325,"AbilityName":"好奇","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Intellectual Curiosity","PreAbilityId":287050436583540,"PreAbility":{"AbilityId":287050436583540,"AbilityName":"开放性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Openness to experience","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"开放性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估对经验本身的积极寻求和欣赏以及对不熟悉情境的容忍和探索。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Openness to experience","AbilityType":0,"Id":287050436583540,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T15:43:34","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"好奇","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436583540,"LevelNumber":2,"Icon":"/content/ability/90277770-1480-4e14-a894-d954df387a21.png","Color":"#0D8BF2","AbilityCode":"Intellectual Curiosity","AbilityType":0,"Id":746473208816325,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:27:15","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746473297920709,"AbilityName":"审美","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Aesthetic Sensitivity","PreAbilityId":287050436583540,"PreAbility":{"AbilityId":287050436583540,"AbilityName":"开放性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Openness to experience","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"开放性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估对经验本身的积极寻求和欣赏以及对不熟悉情境的容忍和探索。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Openness to experience","AbilityType":0,"Id":287050436583540,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T15:43:34","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"审美","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436583540,"LevelNumber":2,"Icon":"/content/ability/ae385f73-8952-4051-9b41-b60dc9466acb.png","Color":"#0D8BF2","AbilityCode":"Aesthetic Sensitivity","AbilityType":0,"Id":746473297920709,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:27:37","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746473403052485,"AbilityName":"想象","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Creative Imagination","PreAbilityId":287050436583540,"PreAbility":{"AbilityId":287050436583540,"AbilityName":"开放性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Openness to experience","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"开放性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估对经验本身的积极寻求和欣赏以及对不熟悉情境的容忍和探索。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Openness to experience","AbilityType":0,"Id":287050436583540,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T15:43:34","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"想象","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436583540,"LevelNumber":2,"Icon":"/content/ability/f504fabb-5783-4176-b49f-c1e4d0672a95.png","Color":"#0D8BF2","AbilityCode":"Creative Imagination","AbilityType":0,"Id":746473403052485,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:28:03","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583540,"AbilityName":"开放性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Openness to experience","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"开放性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估对经验本身的积极寻求和欣赏以及对不熟悉情境的容忍和探索。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Openness to experience","AbilityType":0,"Id":287050436583540,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T15:43:34","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746469727195845,"AbilityName":"果断","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Assertiveness","PreAbilityId":287050436583551,"PreAbility":{"AbilityId":287050436583551,"AbilityName":"外向性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Extraversion","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"外向性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估人际互动的数量和密度、对刺激的需要以及获得愉悦的能力。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Extraversion","AbilityType":0,"Id":287050436583551,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:39:36","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"果断","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436583551,"LevelNumber":2,"Icon":"/content/ability/1f2015fe-22fc-4192-ae28-8ccbd520be77.png","Color":"#0D8BF2","AbilityCode":"Assertiveness","AbilityType":0,"Id":746469727195845,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:13:05","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746469904003717,"AbilityName":"活力","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Energy Level","PreAbilityId":287050436583551,"PreAbility":{"AbilityId":287050436583551,"AbilityName":"外向性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Extraversion","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"外向性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估人际互动的数量和密度、对刺激的需要以及获得愉悦的能力。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Extraversion","AbilityType":0,"Id":287050436583551,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:39:36","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"活力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436583551,"LevelNumber":2,"Icon":"/content/ability/1f6a1724-0350-4530-8c7a-f9d9c0e2dcbc.png","Color":"#0D8BF2","AbilityCode":"Energy Level","AbilityType":0,"Id":746469904003717,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:13:48","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746469349888453,"AbilityName":"社交","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Sociability","PreAbilityId":287050436583551,"PreAbility":{"AbilityId":287050436583551,"AbilityName":"外向性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Extraversion","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"外向性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估人际互动的数量和密度、对刺激的需要以及获得愉悦的能力。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Extraversion","AbilityType":0,"Id":287050436583551,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:39:36","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"社交","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436583551,"LevelNumber":2,"Icon":"/content/ability/3e939374-5351-4969-afb1-0c298bec968e.png","Color":"#0D8BF2","AbilityCode":"Sociability","AbilityType":0,"Id":746469349888453,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:11:33","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583551,"AbilityName":"外向性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Extraversion","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"外向性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估人际互动的数量和密度、对刺激的需要以及获得愉悦的能力。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Extraversion","AbilityType":0,"Id":287050436583551,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:39:36","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579442,"AbilityName":"同情","AbilityDescription":"与他人的情感共鸣","AbilityType":2,"AbilityCode":"BFAS_Compassion","PreAbilityId":287050436587615,"PreAbility":{"AbilityId":287050436587615,"AbilityName":"宜人性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Agreeableness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"宜人性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体对其他人所持的态度。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Agreeableness","AbilityType":0,"Id":287050436587615,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:41:34","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"同情","AbilityClassify":0,"ShortDescription":null,"LongDescription":"与他人的情感共鸣","ParentId":287050436587615,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"BFAS_Compassion","AbilityType":0,"Id":287050436579442,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:42:04","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746470074032837,"AbilityName":"谦恭","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Respectfulness","PreAbilityId":287050436587615,"PreAbility":{"AbilityId":287050436587615,"AbilityName":"宜人性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Agreeableness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"宜人性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体对其他人所持的态度。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Agreeableness","AbilityType":0,"Id":287050436587615,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:41:34","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"谦恭","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436587615,"LevelNumber":2,"Icon":"/content/ability/1b8a6c4d-5a45-404f-bcc1-9b2d05896b86.png","Color":"#0D8BF2","AbilityCode":"Respectfulness","AbilityType":0,"Id":746470074032837,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:14:30","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746470164988613,"AbilityName":"信任","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Trust","PreAbilityId":287050436587615,"PreAbility":{"AbilityId":287050436587615,"AbilityName":"宜人性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Agreeableness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"宜人性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体对其他人所持的态度。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Agreeableness","AbilityType":0,"Id":287050436587615,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:41:34","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"信任","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436587615,"LevelNumber":2,"Icon":"/content/ability/a32971e9-b339-44e2-aef6-e66c437d76c2.png","Color":"#0D8BF2","AbilityCode":"Trust","AbilityType":0,"Id":746470164988613,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:14:52","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587615,"AbilityName":"宜人性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Agreeableness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"宜人性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体对其他人所持的态度。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Agreeableness","AbilityType":0,"Id":287050436587615,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:41:34","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746472601162437,"AbilityName":"条理","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Organization","PreAbilityId":287050436587620,"PreAbility":{"AbilityId":287050436587620,"AbilityName":"尽责性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Conscientiousness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"尽责性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体在目标导向行为上的组织、坚持和动机。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Conscientiousness","AbilityType":0,"Id":287050436587620,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:42:55","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"条理","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436587620,"LevelNumber":2,"Icon":"/content/ability/60dcff7f-c1b1-463d-ac1f-335510e4a97f.png","Color":"#0D8BF2","AbilityCode":"Organization","AbilityType":0,"Id":746472601162437,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:24:47","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746472686256773,"AbilityName":"效率","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Productiveness","PreAbilityId":287050436587620,"PreAbility":{"AbilityId":287050436587620,"AbilityName":"尽责性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Conscientiousness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"尽责性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体在目标导向行为上的组织、坚持和动机。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Conscientiousness","AbilityType":0,"Id":287050436587620,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:42:55","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"效率","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436587620,"LevelNumber":2,"Icon":"/content/ability/5d04b768-e92d-42f1-a321-9d3e98268a4a.png","Color":"#0D8BF2","AbilityCode":"Productiveness","AbilityType":0,"Id":746472686256773,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:25:08","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":746472764015045,"AbilityName":"负责","AbilityDescription":null,"AbilityType":2,"AbilityCode":"Responsibility","PreAbilityId":287050436587620,"PreAbility":{"AbilityId":287050436587620,"AbilityName":"尽责性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Conscientiousness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"尽责性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体在目标导向行为上的组织、坚持和动机。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Conscientiousness","AbilityType":0,"Id":287050436587620,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:42:55","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"负责","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":287050436587620,"LevelNumber":2,"Icon":"/content/ability/8d0d49bc-7c45-4036-b3bb-4e04b14d3c8f.png","Color":"#0D8BF2","AbilityCode":"Responsibility","AbilityType":0,"Id":746472764015045,"Enabled":true,"Deleted":false,"CreateTime":"2024-10-10T15:25:27","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587620,"AbilityName":"尽责性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"Conscientiousness","PreAbilityId":287050436579441,"PreAbility":{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"尽责性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"评估个体在目标导向行为上的组织、坚持和动机。","ParentId":287050436579441,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"Conscientiousness","AbilityType":0,"Id":287050436587620,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-07T17:42:55","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579441,"AbilityName":"大五类人格特征","AbilityDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","AbilityType":0,"AbilityCode":"TheBigFive","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.000000000000002,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"大五类人格特征","AbilityClassify":0,"ShortDescription":null,"LongDescription":"麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。 ","ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E5%A4%A7%E8%84%91%E8%83%BD%E5%8A%9B%E9%BB%98%E8%AE%A4.png","Color":"#1c97f5","AbilityCode":"TheBigFive","AbilityType":0,"Id":287050436579441,"Enabled":true,"Deleted":false,"CreateTime":"2020-09-04T17:38:42","UpdateTime":"0001-01-01T00:00:00"}}];
+
+
+    var ReportData = CommonReportData.filter(function (item) {
+        return item.AbilityType === 1;
+    });
+    ReportData.forEach(function (item) {
+        item.AbilityScore.Score = Math.floor(item.AbilityScore.Score);
+        for (var i = 0; i < CommonReportData.length; i++) {
+            if (item.AbilityId === CommonReportData[i].PreAbilityId) {
+                CommonReportData[i].AbilityScore.Score = Math.floor(CommonReportData[i].AbilityScore.Score);
+                if (Array.isArray(item.ChildrenAbilitys)) {
+                    item.ChildrenAbilitys.push(CommonReportData[i])
+                } else {
+                    item.ChildrenAbilitys = [CommonReportData[i]]
+                }
+            }
+        }
+    });
+
+    var personalityCharacteristics = {
+        '外向性': {
+            desc: "这个维度衡量你在社交场合中的表现，包括参与社交活动的积极性、与他人互动的频率和活力。",
+            highScore: "健谈、乐群、充满活力",
+            lowScore: "内向、冷静、独立",
+            color: '#F8C040',
+            score: 12,
+            list: [
+                {name: '社交', score: 3.01},
+                {name: '果断', score: 20},
+                {name: '活力', score: 16}
+            ]
+        },
+        '宜人性': {
+            desc: "该维度评估你在人际关系中的温和程度，包括对他人的同情心、礼貌行为以及信任他人的倾向。",
+            highScore: "心地温柔、信任他人、宽容",
+            lowScore: "挑剔、粗鲁、不合作",
+            color: '#89DF78',
+            score: 18,
+            list: [
+                {name: '同情', score: 3.01},
+                {name: '谦恭', score: 20},
+                {name: '信任', score: 16}
+            ]
+        },
+        '尽责性': {
+            desc: "这个维度反映你的自律性和责任感，包括对任务的条理性、执行效率以及对结果的负责程度。",
+            highScore: "有条理、可靠、自律、注重细节",
+            lowScore: "无目标、懒散、粗心",
+            color: '#58B5FF',
+            score: 8,
+            list: [
+                {name: '条理', score: 3.01},
+                {name: '效率', score: 12},
+                {name: '负责', score: 11}
+            ]
+        },
+        '神经质': {
+            desc: "该维度衡量你的情绪稳定性，关注你在面对压力时的焦虑感、情绪波动和抑郁程度。",
+            highScore: "情绪化、易焦虑、敏感",
+            lowScore: "平静、放松、情绪稳定",
+            color: '#FFCC7B',
+            score: 5,
+            list: [
+                {name: '焦虑', score: 3.01},
+                {name: '抑郁', score: 20},
+                {name: '易变', score: 16}
+            ]
+        },
+        '开放性': {
+            desc: "这个维度考察你对新体验和新知识的接受程度，包括对好奇心、艺术审美以及想象力的展现。",
+            highScore: "创造力强、兴趣广泛、富有想象力",
+            lowScore: "实际、守旧、缺乏好奇心",
+            color: '#2F9FFF',
+            score: 15,
+            list: [
+                {name: '好奇', score: 3.01},
+                {name: '审美', score: 20},
+                {name: '想象', score: 16}
+            ]
+        },
+    };
+    var levelTwoIcon = {
+        "活力": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon1.png",
+        "社交": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon2.png",
+        "果断": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon3.png",
+        "信任": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon4.png",
+        "同情": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon5.png",
+        "谦恭": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon6.png",
+        "条理": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon7.png",
+        "效率": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon8.png",
+        "负责": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon9.png",
+        "想象": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon10.png",
+        "好奇": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon11.png",
+        "审美": "https://cdn.iquizoo.com/static/img/report/thebigfive/personality-icon12.png",
+    }
+
+
+    $(function () {
+        initRadar();
+        initFirstData();
+        initSecondData();
+        setPageSize();
+
+        function initFirstData() {
+            var scoreRanking = {
+                high: {},
+                medium: {},
+                low: {}
+            };
+            for (var i = 0; i < ReportData.length; i++) {
+                if (ReportData[i].AbilityScore.Score <= 8) {
+                    if (Array.isArray(scoreRanking.low[ReportData[i].AbilityScore.Score])) {
+                        scoreRanking.low[ReportData[i].AbilityScore.Score].push(ReportData[i].AbilityName);
+                    } else {
+                        scoreRanking.low[ReportData[i].AbilityScore.Score] = [ReportData[i].AbilityName];
+                    }
+                } else if (ReportData[i].AbilityScore.Score <= 15) {
+                    if (Array.isArray(scoreRanking.medium[ReportData[i].AbilityScore.Score])) {
+                        scoreRanking.medium[ReportData[i].AbilityScore.Score].push(ReportData[i].AbilityName);
+                    } else {
+                        scoreRanking.medium[ReportData[i].AbilityScore.Score] = [ReportData[i].AbilityName];
+                    }
+                } else {
+                    if (Array.isArray(scoreRanking.high[ReportData[i].AbilityScore.Score])) {
+                        scoreRanking.high[ReportData[i].AbilityScore.Score].push(ReportData[i].AbilityName);
+                    } else {
+                        scoreRanking.high[ReportData[i].AbilityScore.Score] = [ReportData[i].AbilityName];
+                    }
+                }
+            }
+            $(".personality-body .result-text span:last").text(function () {
+                var list = [];
+                var high = Object.keys(scoreRanking.high).sort().reverse();
+                var medium = Object.keys(scoreRanking.medium).sort().reverse();
+                var low = Object.keys(scoreRanking.low).sort().reverse();
+                if (high.length) {
+                    var text = "";
+                    for (var i = 0; i < high.length; i++) {
+                        text += scoreRanking.high[high[i]].join("、") + "得分为" + high[i] + "分，";
+                    }
+                    text += "得分较高";
+                    list.push(text);
+                }
+                if (medium.length) {
+                    var text = "";
+                    for (var i = 0; i < medium.length; i++) {
+                        text += scoreRanking.medium[medium[i]].join("、") + "得分为" + medium[i] + "分，";
+                    }
+                    text += "得分中等";
+                    list.push(text);
+                }
+                if (low.length) {
+                    var text = "";
+                    for (var i = 0; i < low.length; i++) {
+                        text += scoreRanking.low[low[i]].join("、") + "得分为" + low[i] + "分，";
+                    }
+                    text += "得分较低";
+                    list.push(text);
+                }
+                return "万万岁的" + list.join("；") + "。";
+            });
+
+            for (var i = 0; i < ReportData.length; i++) {
+                $(".result-table").append(`
+                	<div class="result-table-tr">
+						<div class="result-table-td">
+							<div class="td-text">
+								${personalityCharacteristics[ReportData[i].AbilityName].lowScore}
+							</div>
+						</div>
+						<div class="result-table-td flex-column">
+							<div class="td-text-small" style="margin-bottom: 8px;">${ReportData[i].AbilityName}（${ReportData[i].AbilityScore.Score}分）</div>
+							<div class="progress" style="--progress: ${ReportData[i].AbilityScore.Score / 20 * 100};--progress-color: ${personalityCharacteristics[ReportData[i].AbilityName].color};">
+							<div class="progress-value"></div>
+						</div>
+						</div>
+						<div class="result-table-td">
+							<div class="td-text-small td-text">
+								${personalityCharacteristics[ReportData[i].AbilityName].highScore}
+							</div>
+						</div>
+					</div>
+                `)
+            }
+
+
+        }
+
+        function initSecondData() {
+            $(".advantage-content-items").html(function () {
+                var html = '';
+                for (var i = 0; i < CommonReportData.length; i++) {
+                    if (CommonReportData[i].AbilityType === 2 && CommonReportData[i].AbilityScore.Score >= 16 && levelTwoIcon[CommonReportData[i].AbilityName]) {
+                        html += `<img src="${levelTwoIcon[CommonReportData[i].AbilityName]}" />`
+                    }
+                }
+                if (!html) {
+                    $(".advantage-content").hide();
+                }
+                return html;
+            });
+
+            $(".advantage-items-desc").html(function () {
+                var html = '';
+                for (var i = 0; i < ReportData.length; i++) {
+                    var list = ReportData[i].ChildrenAbilitys;
+                    var progressHtml = '';
+                    var starHtml = '';
+                    for (var j = 0; j < list.length; j++) {
+                        if (ReportData[i].AbilityScore.Score >= 16) {
+                            starHtml = `<img src="https://cdn.iquizoo.com/static/img/report/thebigfive/personality-star.png" alt="">`
+                        }
+                        progressHtml += `
+                        <div class="desc-item">
+                            <span class="item-name">${list[j].AbilityName}：</span>
+                            <div class="item-progress">
+                                <div class="item-progress-value" style="width: ${list[j].AbilityScore.Score / 20 * 100}%;"></div>
+                            </div>
+                            <span class="item-scode">${list[j].AbilityScore.Score}分</span>
+                        </div>
+                        `
+                    }
+
+                    html += `
+                    <div class="advantage-item" style="--color: ${personalityCharacteristics[ReportData[i].AbilityName].color};">
+                        <div class="desc-text-box">
+                            <div class="dtb-label">
+                                ${i + 1}.${ReportData[i].AbilityName}
+                                ${starHtml}
+                            </div>
+                            <span>${personalityCharacteristics[ReportData[i].AbilityName].desc}</span>
+                        </div>
+                        <div class="desc-item-list">${progressHtml}</div>
+                    </div>
+                    `
+                }
+                return html;
+            })
+        }
+
+        function initRadar(data) {
+            var keys = Object.keys(personalityCharacteristics);
+            var option = {
+                legend: {
+                    left: 'center',
+                    bottom: 0,
+                    orient: "vertical",
+                    itemWidth: 6,
+                    itemHeight: 6,
+                    data: [{
+                        name: '你的分数', itemStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 1,
+                                y2: 0,
+                                colorStops: [{
+                                    offset: 0, color: '#1AADFD' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#29D9F8' // 100% 处的颜色
+                                }],
+                                global: false // 缺省为 false
+                            },
+                            borderWidth: 12,
+                            borderColor: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 1,
+                                y2: 0,
+                                colorStops: [{
+                                    offset: 0, color: '#1AADFD' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#29D9F8' // 100% 处的颜色
+                                }],
+                                global: false // 缺省为 false
+                            },
+                            borderJoin: "round",
+                        }
+                    }],
+                    textStyle: {
+                        color: "#0E1D42",
+                        fontSize: 20,
+                        fontWeight: 500,
+                        height: 30,
+                        padding: [0, 0, 0, 8]
+                    }
+                },
+                radar: {
+                    indicator: ReportData.map(function (item) {
+                        return {
+                            name: item.AbilityName,
+                            max: 20,
+                            min: 0,
+                            value: item.AbilityScore.Score
+                        }
+                    }),
+                    center: ['50%', '52%'],
+                    radius: ['0', '70%'],
+                    splitNumber: 4,
+                    shape: 'circle',
+                    axisName: {
+                        formatter: function (value, indicator) {
+                            return '{a|' + value + '}\n{b|' + indicator.value + '}';
+                        },
+                        color: "#000",
+                        fontSize: 22,
+                        fontWeight: 500,
+                        padding: [30, 0, 0, 0],
+                        rich: {
+                            a: {
+                                align: "center",
+                                color: "#000",
+                                fontSize: 22,
+                                height: 30,
+                                fontWeight: 500,
+                            },
+                            b: {
+                                align: "center",
+                                color: "#000",
+                                fontSize: 22,
+                                fontWeight: 500,
+                            },
+                        },
+                    },
+                    splitArea: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#eee',
+                            type: [5,10],
+                            dashOffset: 3,
+                            width: 1.5
+                        }
+                    },
+                    splitLine: {
+                        show: false,
+                        lineStyle: {
+                            color: '#ddd',
+                            width: 0
+                        }
+                    }
+                },
+                series: [
+                    {
+                        type: 'radar',
+                        data: [
+                            {
+                                value: ReportData.map(function (item) {
+                                    return item.AbilityScore.Score
+                                }),
+                                name: '你的分数',
+                                symbolSize: 6,
+                                lineStyle: {
+                                    color: {
+                                        type: 'linear',
+                                        x: 0,
+                                        y: 0,
+                                        x2: 1,
+                                        y2: 0,
+                                        colorStops: [{
+                                            offset: 0, color: '#1AADFD' // 0% 处的颜色
+                                        }, {
+                                            offset: 1, color: '#29D9F8' // 100% 处的颜色
+                                        }],
+                                        global: false // 缺省为 false
+                                    },
+                                    width: 1.5,
+                                    type: [3, 3],
+                                    dashOffset: 3,
+                                },
+                                itemStyle: {
+                                    color: {
+                                        type: 'linear',
+                                        x: 0,
+                                        y: 0,
+                                        x2: 1,
+                                        y2: 0,
+                                        colorStops: [{
+                                            offset: 0, color: '#1AADFD' // 0% 处的颜色
+                                        }, {
+                                            offset: 1, color: '#29D9F8' // 100% 处的颜色
+                                        }],
+                                        global: false // 缺省为 false
+                                    }
+                                },
+                                areaStyle: {
+                                    color: {
+                                        type: 'linear',
+                                        x: 0,
+                                        y: 0,
+                                        x2: 1,
+                                        y2: 0,
+                                        colorStops: [{
+                                            offset: 0, color: '#1AADFD' // 0% 处的颜色
+                                        }, {
+                                            offset: 1, color: '#29D9F8' // 100% 处的颜色
+                                        }],
+                                        global: false // 缺省为 false
+                                    },
+                                    opacity: 0.4
+                                }
+                            },
+                        ]
+                    }
+                ]
+            };
+            echarts.init(document.querySelector(".result-charts>div")).setOption(option);
+        }
+
+
+        function setPageSize() {
+			$('.page-pagination').each(function (i) {
+				$(this).text(fullZero(i +1));
+            });
+        }
+
+        function fullZero(num) {
+			return num < 10 ? '0' + num : num
+		}
+    })
+</script>
+</html>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大脑认知能力报告</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                margin: 0 !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        .page {
+            width: 1190px;
+            height: 1682px;
+             margin: 0 !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-logo {
+            position: absolute;
+            top: 30px;
+            left: 28px;
+        }
+
+        .page-content {
+            width: 1128px;
+            margin: 98px auto 0;
+        }
+
+        .page-number {
+            width: 100%;
+            height: 26px;
+            line-height: 26px;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .page-number .copyright {
+            height: 100%;
+            position: absolute;
+            right: 20px;
+            top: 0;
+            color: #DBDBDB;
+            font-size: 14px;
+        }
+
+        .page-number .copyright img {
+            margin-left: 10px;
+        }
+	</style>
+    <style>
+        .page-label-title {
+            width: 1070px;
+            margin: 0 auto 20px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            color: #222;
+            font-weight: bold;
+        }
+
+        .page-label-title img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .cover-page {
+            color: #fff;
+            background-image: url(https://cdn.iquizoo.com/static/img/report/simply/home-bg.png);
+            background-repeat: no-repeat;
+            background-color: #006cad;
+            text-align: center;
+        }
+
+        .cover-page h1 {
+            height: 75px;
+            font-size: 70px;
+            margin-top: 220px;
+            font-style: normal;
+            letter-spacing: 2px;
+        }
+
+        .cover-page h2 {
+            height: 35px;
+            margin-top: 24px;
+            font-size: 36px;
+        }
+
+        .cover-page .brain {
+            margin-top: 90px;
+        }
+
+        .cover-page ul {
+            font-size: 26px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 200px;
+            text-align: left;
+        }
+
+        .cover-page ul li {
+            line-height: 60px;
+            padding-left: 53px;
+        }
+
+        .cover-page ul li:nth-child(1) {
+            background: url(https://cdn.iquizoo.com/static/img/report/simply/name.png) no-repeat 0 22px;
+        }
+
+        .cover-page ul li:nth-child(2) {
+            background: url(https://cdn.iquizoo.com/static/img/report/simply/class.png) no-repeat 0px 17px / 20px 28px;
+        }
+
+        .cover-page ul span:nth-child(1) {
+            margin-right: 1em;
+        }
+
+        .cover-page .footer {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+            font-size: 14px;
+        }
+
+        .cover-page .footer p:first-child {
+            font-size: 16px;
+            margin-bottom: 9px;
+        }
+
+        .first-page .capability-header {
+            height: 37px;
+            line-height: 37px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .first-page .capability-header li {
+            float: left;
+            color: #fff;
+            font-size: 16px;
+            width: 24.8%;
+            background: #c7c7c7;
+            text-align: center;
+        }
+
+        .first-page .capability-header:nth-child(2) li {
+            float: left;
+            color: #5C5C5C;
+            font-size: 16px;
+            width: 24.8%;
+            background: #EBEBEB;
+            text-align: center;
+        }
+
+        .first-page .content-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 638px;
+            height: 150px;
+            margin: 20px auto;
+        }
+
+        .first-page .content-header img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .first-page .content-header-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 82px;
+            margin-bottom: 5px;
+        }
+
+        .first-page .content-header-title h2 {
+            font-size: 36px;
+            color: #41484C;
+        }
+
+        .first-page .content-header-title p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .first-page .ability-index {
+            width: 202px;
+            height: 118px;
+            background-color: #0086D7;
+            text-align: center;
+            line-height: 118px;
+            color: #fff;
+            font-size: 82px;
+            font-family: SourceHanSansCN-Bold;
+            font-weight: bold;
+        }
+
+        .first-page .ranking-percentage {
+            width: 1000px;
+            height: 420px;
+            margin: 0 auto;
+            text-align: center;
+            overflow: unset;
+        }
+
+        .first-page .ranking-grade {
+            width: 1000px;
+            height: 47px;
+            display: flex;
+            margin: 36px auto 0;
+        }
+
+        .first-page .userwrap {
+            position: relative;
+            text-align: left;
+            left: 0;
+            transform: translateX(-23.5px);
+        }
+
+        .first-page .ranking-percentage img {
+            width: 35px;
+            margin-top: 6px;
+            margin-left: 4px;
+        }
+
+        .first-page .exceedText {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 500;
+            color: #FFFFFF;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #2197D8;
+            left: 50px;
+            top: 16px;
+            padding: 0 10px;
+        }
+
+        .first-page .xian {
+            border: 1px dashed #B0B0B0;
+        }
+
+        .first-page .sjx {
+            border-top: 20px solid #2197D8;
+        }
+
+        .first-page .ranking-grade li {
+            text-align: center;
+            line-height: 47px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        .first-page .ranking-grade li:nth-child(1) {
+            width: 291px;
+            background: #1A9ED8;
+            opacity: 0.6;
+        }
+
+        .first-page .ranking-grade li:nth-child(2) {
+            width: 119px;
+            background: #1A9ED8;
+            opacity: 0.7;
+        }
+
+        .first-page .ranking-grade li:nth-child(3) {
+            width: 178px;
+            background: #1A9ED8;
+            opacity: 0.8;
+        }
+
+        .first-page .ranking-grade li:nth-child(4) {
+            width: 122px;
+            background: #1A9ED8;
+            opacity: 0.9;
+        }
+
+        .first-page .ranking-grade li:nth-child(5) {
+            width: 290px;
+            background: #1A9ED8;
+            opacity: 1;
+        }
+
+        .first-page .score-indication-content {
+            width: 926px;
+            margin: 40px auto 80px;
+            font-weight: 400;
+            text-indent: 2em;
+            line-height: 27px;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            font-size: 16px;
+            color: #333;
+        }
+
+
+        .summary-data {
+            width: 968px;
+            margin: 30px auto 0;
+            position: relative;
+        }
+
+        .summary-data .summary-data-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .summary-data .summary-data-content img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .summary-data .summary-data-content .histogram {
+            width: 900px;
+            height: 40px;
+            background-color: #EDEDED;
+            position: relative;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .summary-data .summary-data-content .histogram:after {
+            content: '';
+            display: block;
+            width: 2px;
+            border-left: 2px dashed #999;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: -5px;
+			transform: translateX(-50%);
+        }
+
+        .summary-data .average {
+            position: absolute;
+            z-index: 2;
+            width: 160px;
+            top: -42px;
+            left: 438px;
+        }
+
+        .summary-data .average .average-word {
+            width: 160px;
+            height: 40px;
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .summary-data .histogram span:nth-child(1) {
+            margin-left: 19px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #fff;
+            position: relative;
+            z-index: 5;
+        }
+
+        .summary-data .histogram-percentage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 40px;
+        }
+
+        .summary-data .histogram span:nth-child(2) {
+            margin-left: 4px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .summary-data-desc {
+            width: 926px;
+            font-size: 16px;
+            line-height: 27px;
+            margin: 20px auto 30px;
+            text-align: justify;
+            color: #333;
+            text-indent: 2em;
+            position: relative;
+            z-index: 5;
+            background-color: #fff;
+        }
+
+        .ability-desc-list {
+            padding: 20px 55px 0;
+        }
+
+
+        .ability-desc-list .competence-word {
+            margin: 23px auto 56px;
+            font-size: 16px;
+            color: #333;
+            text-indent: 2em;
+            text-align: justify;
+            line-height: 27px;
+        }
+
+        .ability-desc-list .competence-name {
+            width: 128px;
+            height: 44px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 44px;
+            color: #fff;
+            padding: 0 12px;
+            white-space: nowrap;
+        }
+
+        .page-desc {
+            margin: 23px auto;
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+            line-height: 27px;
+            text-indent: 2em;
+        }
+
+        .page-table-box {
+            width: 1070px;
+            margin: 0 auto 120px;
+        }
+
+        .page-table-box ul {
+            width: 100%;
+            font-size: 18px;
+            display: flex;
+            margin-bottom: 3px;
+        }
+
+        .page-table-box ul li {
+            line-height: 30px;
+            border-right: 3px solid #fff;
+            background-color: #EDEDED;
+            color: #333;
+            flex-shrink: 0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-table-box ul li:nth-child(1) {
+            width: 220px;
+        }
+
+        .page-table-box ul li:nth-child(2) {
+            width: 140px;
+        }
+
+        .page-table-box ul li:nth-child(3) {
+            width: 180px;
+        }
+
+        .page-table-box ul li:last-child {
+            flex-grow: 1;
+            flex-shrink: 1;
+            border-right: none;
+            justify-content: flex-start;
+        }
+
+        .page-table-box .table-head {
+            font-weight: bold;
+        }
+
+        .page-table-box .table-head li {
+            background-color: #0086D7;
+            color: #fff;
+            line-height: 50px;
+            padding: 0;
+        }
+
+        .page-table-box .table-head li:last-child {
+            justify-content: center;
+        }
+
+        /*# sourceMappingURL=report.css.map */
+	</style>
+    <script src="https://cdn.iquizoo.com/static/js/jquery/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="cover-page page">
+    <!--<img class="page-logo" src="https://cdn.iquizoo.com/static/img/report/simply/logo.png" alt="">-->
+    <h1>大脑认知能力报告</h1>
+    <h2>Report for Brain Cognitive Ability</h2>
+    <img class="brain" src="https://cdn.iquizoo.com/static/img/report/simply/brain.png" alt="">
+    <ul>
+        <li>
+            <span>姓  名：</span>
+            <span>六岁</span>
+        </li>
+        <li>
+            <span>测评时间：</span>
+            <span>2024.11.22</span>
+        </li>
+    </ul>
+    <!--<div class="footer">
+        <p>北京脑智未来科技有限公司提供</p>
+        <p>Provided by FBI TECEHOLOGY Co., Ltd.</p>
+    </div>-->
+</div>
+
+<div class="page first-page">
+    <!--<img class="page-logo" src="https://cdn.iquizoo.com/static/img/report/personal/logo3.png" alt="">-->
+    <div class="page-content">
+        <ul class="capability-header" style="margin-bottom: 3px;">
+            <li>姓名</li>
+            <li>性别</li>
+            <li>年龄</li>
+            <li>测评日期</li>
+        </ul>
+        <ul class="capability-header">
+            <li>六岁</li>
+            <li>女</li>
+            <li>6</li>
+            <li>2024.11.22</li>
+        </ul>
+        <div class="content-header">
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/ability-index.png" alt="">
+            <div class="content-header-title">
+                <h2>大脑认知能力指数</h2>
+                <p>BCAI (Brain Cognitive Ability Index)</p>
+            </div>
+            <div class="ability-index"></div>
+        </div>
+        <div class="page-label-title">
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/ranking-rank.png"
+                 alt="">
+            排名等级
+        </div>
+
+        <div class="ranking-percentage">
+            <div class="userwrap">
+                <div class="exceedText">超过全国<span class="x">#BCI_percentage#</span>同龄人</div>
+                <img src="https://cdn.iquizoo.com/static/img/report/personal/people-dn.png" alt="">
+                <div class="xian" style="position: absolute;height: 323px;width: 0;margin-left: 22px;"></div>
+                <div class="sjx"
+                     style="position: absolute;width: 0;height: 0;border-left: 16px solid transparent;border-right: 16px solid transparent;margin-left: 8px;top: 437px;"></div>
+            </div>
+            <!-- 图表容器 DOM -->
+            <div class="zhengtaifenbu"
+                 style="background: url(https://cdn.iquizoo.com/static/img/report/personal/zt-dn.png);width: 1000px;height: 360px;background-size: 1000px;background-repeat: no-repeat;background-position-y:0;"></div>
+
+        </div>
+        <ul class="ranking-grade">
+            <li>较差</li>
+            <li>及格</li>
+            <li>中等</li>
+            <li>良好</li>
+            <li>优秀</li>
+        </ul>
+        <p class="score-indication-content"></p>
+
+        <div class="page-label-title">
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/competence-summary.png"
+                 alt="">
+            能力概况
+        </div>
+
+        <div class="summary-data">
+            <div class="average">
+                <div class="average-word">
+                    同龄人平均水平
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-number">
+        <span></span>
+        <div class="copyright">
+            <span></span>
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/copyright.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <!--<img class="page-logo" src="https://cdn.iquizoo.com/static/img/report/personal/logo3.png" alt="">-->
+    <div class="page-content" style="padding-top: 12px;">
+        <div class="page-label-title">
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/details-of-the-evaluation.png"
+                 alt="">
+            心理韧性结果分析
+        </div>
+        <div class="page-table-box resilience">
+            <div class="page-desc">心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。</div>
+            <ul class="table-head" style="margin-top: 25px;">
+                <li>维度</li>
+                <li>得分</li>
+                <li>分数范围</li>
+                <li>分数说明</li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-number">
+        <span></span>
+        <div class="copyright">
+            <span></span>
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/copyright.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="page">
+    <!--<img class="page-logo" src="https://cdn.iquizoo.com/static/img/report/personal/logo3.png" alt="">-->
+    <div class="page-content" style="padding-top: 12px;">
+        <div class="page-label-title">
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/details-of-the-evaluation.png"
+                 alt="">
+            成长型思维结果分析
+        </div>
+        <div class="page-table-box growth-oriented">
+            <div class="page-desc">成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。</div>
+            <ul class="table-head" style="margin-top: 25px;">
+                <li>维度</li>
+                <li>得分</li>
+                <li>分数范围</li>
+                <li>分数说明</li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-number">
+        <span></span>
+        <div class="copyright">
+            <span></span>
+            <img src="https://cdn.iquizoo.com/static/img/report/simply/copyright.png" alt="">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var PageData = [{"AbilityId":287050436587600,"AbilityName":"持续注意","AbilityDescription":"持续注意，是指个体将注意长时间持续集中在目标信息上的能力。人的注意力具有很明显的不稳定性，随着环境和内部状态的变化而不断波动。好的持续注意能力能帮助个体将注意稳定的保持，并持续较长的时间。","AbilityType":2,"AbilityCode":"Sustained Attention","PreAbilityId":287050436591742,"PreAbility":{"AbilityId":287050436591742,"AbilityName":"注意力","AbilityDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","AbilityType":1,"AbilityCode":"Attention","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"B","AbilityLevelName":"中等","LevelExpression":"{0}>=97 and {0}<103","AbilitylevelReference":[{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。","Id":9,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的注意能力总体表现为：中等，处于平均水平，略有波动。综合得分101，超过全国53%的同龄人。与同年龄人相比，该学生注意表现处于平均水平，基本能够将注意力集中并维持在当前任务上，但容易被其它事情干扰分心，虽然能够合理分配注意资源，但有时候会顾此失彼。","Id":20,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"中等","Suggest":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。"},"AbilityExtendDescription":[{"Id":22,"AbilityId":287050436591742,"Title":"","Description":"注意力是大脑接收和处理信息的前提，只有被注意到的信息才能得到有效的分析和处理，才能用来解决问题并形成持久的记忆。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-09-28T14:47:00"},{"Id":28,"AbilityId":287050436591742,"Title":"","Description":"注意力不足会导致孩子不愿意动脑筋。做一道难题需要很长时间的连续思考，而注意力不集中的孩子思考时间不能持续很久，往往会半途而废。长久下去，他们会失去克服困难的信心和勇气。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:39:03","UpdateTime":"2022-10-11T09:40:52"}],"AbilityScore":{"Score":101.26,"OverAbilityScore":0.08400000000000034,"AbilityScorePercentage":53.347178411508686,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"注意力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/182747198117521.png","Color":"#fbbc05","AbilityCode":"Attention","AbilityType":0,"Id":287050436591742,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:26:43","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"B","AbilityLevelName":"中等","LevelExpression":"{0}>=97 and {0}<103","AbilitylevelReference":[{"AbilityId":287050436587600,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"在持续注意方面，六岁表现中等。与同龄人相比，基本能集中一段时间的注意力。可以在短时间内集中注意做同一件事情，随着时间增长，会表现出不耐烦或走神，特别是在任务难度大或兴趣度不高的情况，容易表现出急躁的情绪等。建议继续加强该能力。","Id":347,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436587600,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在持续注意力培养上，该生在持续注意力上的表现还有改进空间。在日常学习中，可以安排分阶段的任务，例如完成学习任务后小休息再继续下一部分，培养其对较长时间任务的耐受力。同时，建议引导学生进行目标分解，将大任务划分为小目标，并记录每个阶段的完成情况，以此增强持续注意的动力和成就感。家长还可以通过带领孩子参加手工制作或长时间的拼图活动，进一步锻炼其专注能力。","Id":761693496524874,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T15:38:46","UpdateTime":"2024-11-22T15:38:46"}],"ReferenceRange":"","Explain":"中等","Suggest":"在持续注意力培养上，该生在持续注意力上的表现还有改进空间。在日常学习中，可以安排分阶段的任务，例如完成学习任务后小休息再继续下一部分，培养其对较长时间任务的耐受力。同时，建议引导学生进行目标分解，将大任务划分为小目标，并记录每个阶段的完成情况，以此增强持续注意的动力和成就感。家长还可以通过带领孩子参加手工制作或长时间的拼图活动，进一步锻炼其专注能力。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":100.0,"OverAbilityScore":0.0,"AbilityScorePercentage":50.0,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"85.0","ContentDescription":"本题目要求个体按顺利找出方格中的每个数字，得分为规定时间的正确个数；分数越高，大脑的注意能力越强。","ContentName":"舒尔特方格初级","ScientificName":"舒尔特方格","ContentScore":155.0,"ContentStandardScore":100.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"B","AbilityLevelName":"中等","LevelExpression":"{0}>=97 and {0}<103","AbilitylevelReference":[],"ReferenceRange":"","Explain":"中等","Suggest":null}}],"AbilityDto":{"Name":"持续注意","AbilityClassify":0,"ShortDescription":null,"LongDescription":"持续注意，是指个体将注意长时间持续集中在目标信息上的能力。人的注意力具有很明显的不稳定性，随着环境和内部状态的变化而不断波动。好的持续注意能力能帮助个体将注意稳定的保持，并持续较长的时间。","ParentId":287050436591742,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/183397524770170.png","Color":"#fbbc05","AbilityCode":"Sustained Attention","AbilityType":0,"Id":287050436587600,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:15","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579418,"AbilityName":"选择注意","AbilityDescription":"选择注意，是指个体排除干扰，把注意力集中在特定对象的能力。我们生活的环境充满了各种信息，而人能够同时注意的信息却是非常有限的。好的选择注意能帮助个体根据当前的任务要求，选择性的感知和加工环境中的相关信息，排除无关信息。","AbilityType":2,"AbilityCode":"Selective Attention","PreAbilityId":287050436591742,"PreAbility":{"AbilityId":287050436591742,"AbilityName":"注意力","AbilityDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","AbilityType":1,"AbilityCode":"Attention","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"B","AbilityLevelName":"中等","LevelExpression":"{0}>=97 and {0}<103","AbilitylevelReference":[{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。","Id":9,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的注意能力总体表现为：中等，处于平均水平，略有波动。综合得分101，超过全国53%的同龄人。与同年龄人相比，该学生注意表现处于平均水平，基本能够将注意力集中并维持在当前任务上，但容易被其它事情干扰分心，虽然能够合理分配注意资源，但有时候会顾此失彼。","Id":20,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"中等","Suggest":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。"},"AbilityExtendDescription":[{"Id":22,"AbilityId":287050436591742,"Title":"","Description":"注意力是大脑接收和处理信息的前提，只有被注意到的信息才能得到有效的分析和处理，才能用来解决问题并形成持久的记忆。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-09-28T14:47:00"},{"Id":28,"AbilityId":287050436591742,"Title":"","Description":"注意力不足会导致孩子不愿意动脑筋。做一道难题需要很长时间的连续思考，而注意力不集中的孩子思考时间不能持续很久，往往会半途而废。长久下去，他们会失去克服困难的信心和勇气。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:39:03","UpdateTime":"2022-10-11T09:40:52"}],"AbilityScore":{"Score":101.26,"OverAbilityScore":0.08400000000000034,"AbilityScorePercentage":53.347178411508686,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"注意力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/182747198117521.png","Color":"#fbbc05","AbilityCode":"Attention","AbilityType":0,"Id":287050436591742,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:26:43","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"C+","AbilityLevelName":"有待提升","LevelExpression":"{0}>=85 and {0}<91","AbilitylevelReference":[{"AbilityId":287050436579418,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":5,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"在选择注意方面，六岁的表现低于平均水平。与同龄人相比，在选择注意方面存在一定不足。做事不够专心，喜欢东张西望，做作业会漏题或者看错题目，易被周围的人或事所打扰。建议对此给予重视，着重提升该能力。","Id":335,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436579418,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":5,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在选择注意力培养上，需要重点加以关注。在日常生活中，可以通过特定的游戏或活动来强化选择注意力，例如观察找茬游戏、数字筛选游戏等，帮助其学会快速识别目标信息。同时，可以让学生在学习过程中有意识地排除干扰，例如专注于一段文字中找出核心句子或重要关键词，逐步提升其选择性注意的能力。","Id":761695710412872,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T15:47:46","UpdateTime":"2024-11-22T15:48:26"}],"ReferenceRange":"","Explain":"及格","Suggest":"在选择注意力培养上，需要重点加以关注。在日常生活中，可以通过特定的游戏或活动来强化选择注意力，例如观察找茬游戏、数字筛选游戏等，帮助其学会快速识别目标信息。同时，可以让学生在学习过程中有意识地排除干扰，例如专注于一段文字中找出核心句子或重要关键词，逐步提升其选择性注意的能力。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":87.0,"OverAbilityScore":-0.8666666666666667,"AbilityScorePercentage":19.306233714190693,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"5.16666666666667","ContentDescription":"本题目测查个体同时注意多个移动目标的能力，得分为能同时追踪的物体个数；分数越高，大脑的注意的广度越大。","ContentName":"萤火虫","ScientificName":"多物体追踪","ContentScore":5.5,"ContentStandardScore":87.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"C+","AbilityLevelName":"有待提升","LevelExpression":"{0}>=85 and {0}<91","AbilitylevelReference":[],"ReferenceRange":"","Explain":"及格","Suggest":null}}],"AbilityDto":{"Name":"选择注意","AbilityClassify":0,"ShortDescription":null,"LongDescription":"选择注意，是指个体排除干扰，把注意力集中在特定对象的能力。我们生活的环境充满了各种信息，而人能够同时注意的信息却是非常有限的。好的选择注意能帮助个体根据当前的任务要求，选择性的感知和加工环境中的相关信息，排除无关信息。","ParentId":287050436591742,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/183372925988206.png","Color":"#ed9700","AbilityCode":"Selective Attention","AbilityType":0,"Id":287050436579418,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:15","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436595790,"AbilityName":"分配注意","AbilityDescription":"分配注意，是指个体在同时处理多个任务时，将注意力有效分配到不同的任务上的能力。分配注意对我们有限的注意资源提出了更高的挑战。好的分配注意能力让个体能根据任务的特点将注意合理分配并快速切换到不同任务中，从而同时完成各个任务。","AbilityType":2,"AbilityCode":"Divided Attention","PreAbilityId":287050436591742,"PreAbility":{"AbilityId":287050436591742,"AbilityName":"注意力","AbilityDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","AbilityType":1,"AbilityCode":"Attention","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"B","AbilityLevelName":"中等","LevelExpression":"{0}>=97 and {0}<103","AbilitylevelReference":[{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。","Id":9,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的注意能力总体表现为：中等，处于平均水平，略有波动。综合得分101，超过全国53%的同龄人。与同年龄人相比，该学生注意表现处于平均水平，基本能够将注意力集中并维持在当前任务上，但容易被其它事情干扰分心，虽然能够合理分配注意资源，但有时候会顾此失彼。","Id":20,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"中等","Suggest":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。"},"AbilityExtendDescription":[{"Id":22,"AbilityId":287050436591742,"Title":"","Description":"注意力是大脑接收和处理信息的前提，只有被注意到的信息才能得到有效的分析和处理，才能用来解决问题并形成持久的记忆。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-09-28T14:47:00"},{"Id":28,"AbilityId":287050436591742,"Title":"","Description":"注意力不足会导致孩子不愿意动脑筋。做一道难题需要很长时间的连续思考，而注意力不集中的孩子思考时间不能持续很久，往往会半途而废。长久下去，他们会失去克服困难的信心和勇气。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:39:03","UpdateTime":"2022-10-11T09:40:52"}],"AbilityScore":{"Score":101.26,"OverAbilityScore":0.08400000000000034,"AbilityScorePercentage":53.347178411508686,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"注意力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/182747198117521.png","Color":"#fbbc05","AbilityCode":"Attention","AbilityType":0,"Id":287050436591742,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:26:43","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"A","AbilityLevelName":"良好","LevelExpression":"{0}>=115 and {0}<121","AbilitylevelReference":[{"AbilityId":287050436595790,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":10,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"在分配注意方面，六岁表现良好。与同龄人相比，在需要同时完成多个任务时，能较合理地将注意力分配到不同活动中，并进行较好的协调。可以在听老师讲课时同时记一些笔记，能较好地做到左右开工、手脚协调，平衡能力较好。建议继续保持并加强该优势。","Id":361,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436595790,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":10,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在分配注意力培养上，可以考虑对孩子持续注意力提出更高的要求。在日常生活中，可以鼓励学生参与跨学科的学习活动或多任务的管理任务，例如组织活动或规划项目，通过同时处理多种信息来巩固和拓展分配注意力的能力。此外，可以参与需要高度注意分配的任务，例如辩论赛或复杂的策略类游戏，进一步提升其在高难度任务中的灵活性和应对能力。","Id":761695415885894,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T15:46:34","UpdateTime":"2024-11-22T15:46:34"}],"ReferenceRange":"","Explain":"良好","Suggest":"在分配注意力培养上，可以考虑对孩子持续注意力提出更高的要求。在日常生活中，可以鼓励学生参与跨学科的学习活动或多任务的管理任务，例如组织活动或规划项目，通过同时处理多种信息来巩固和拓展分配注意力的能力。此外，可以参与需要高度注意分配的任务，例如辩论赛或复杂的策略类游戏，进一步提升其在高难度任务中的灵活性和应对能力。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":116.0,"OverAbilityScore":1.0666666666666667,"AbilityScorePercentage":85.69388078044909,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"30.593155","ContentDescription":"本题目要求个体阻挡多个方向飞向地球的陨石，得分为每分钟成功阻挡陨石的个数；分数越高，大脑注意分配的能力越强。","ContentName":"阻挡陨石","ScientificName":"分配注意","ContentScore":56.14257807156264,"ContentStandardScore":116.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"A","AbilityLevelName":"良好","LevelExpression":"{0}>=115 and {0}<121","AbilitylevelReference":[],"ReferenceRange":"","Explain":"良好","Suggest":null}}],"AbilityDto":{"Name":"分配注意","AbilityClassify":0,"ShortDescription":null,"LongDescription":"分配注意，是指个体在同时处理多个任务时，将注意力有效分配到不同的任务上的能力。分配注意对我们有限的注意资源提出了更高的挑战。好的分配注意能力让个体能根据任务的特点将注意合理分配并快速切换到不同任务中，从而同时完成各个任务。","ParentId":287050436591742,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/183424915206546.png","Color":"#ffe029","AbilityCode":"Divided Attention","AbilityType":0,"Id":287050436595790,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:15","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436591742,"AbilityName":"注意力","AbilityDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","AbilityType":1,"AbilityCode":"Attention","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"B","AbilityLevelName":"中等","LevelExpression":"{0}>=97 and {0}<103","AbilitylevelReference":[{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。","Id":9,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436591742,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":7,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的注意能力总体表现为：中等，处于平均水平，略有波动。综合得分101，超过全国53%的同龄人。与同年龄人相比，该学生注意表现处于平均水平，基本能够将注意力集中并维持在当前任务上，但容易被其它事情干扰分心，虽然能够合理分配注意资源，但有时候会顾此失彼。","Id":20,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"中等","Suggest":"在注意力培养上，该生在注意力上的表现还有改进空间，兴趣和需要是孩子进行活动的内在推动力，直接影响孩子注意力的情感系统。为了维持孩子对某活动的兴趣，家长应当注意活动内容的难度要控制到适合孩子的水平，既要让孩子体验到成功的快乐，同时又能受到一定的挑战。使用针对性的注意力训练。注意力训练主要是依据儿童注意力发展规律，结合个体的注意力发展特点，制定科学的注意力训练任务和训练日程，有针对性地提高儿童注意力。例如，为了加强注意的持续性，可以让小孩每天坚持完成一些持续性注意的任务，并及时给出反馈。"},"AbilityExtendDescription":[{"Id":22,"AbilityId":287050436591742,"Title":"","Description":"注意力是大脑接收和处理信息的前提，只有被注意到的信息才能得到有效的分析和处理，才能用来解决问题并形成持久的记忆。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-09-28T14:47:00"},{"Id":28,"AbilityId":287050436591742,"Title":"","Description":"注意力不足会导致孩子不愿意动脑筋。做一道难题需要很长时间的连续思考，而注意力不集中的孩子思考时间不能持续很久，往往会半途而废。长久下去，他们会失去克服困难的信心和勇气。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:39:03","UpdateTime":"2022-10-11T09:40:52"}],"AbilityScore":{"Score":101.26,"OverAbilityScore":0.08400000000000034,"AbilityScorePercentage":53.347178411508686,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"注意力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/182747198117521.png","Color":"#fbbc05","AbilityCode":"Attention","AbilityType":0,"Id":287050436591742,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:26:43","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579413,"AbilityName":"抵制诱惑","AbilityDescription":"抵制诱惑，是指个体能自觉抵制那些能够带来短暂愉悦，却会造成长期伤害的诱惑的能力。具有高的抵制诱惑的能力的人能够让短期利益屈服于长久利益，能够在完成作业后才玩耍，能够抵制垃圾食品和饮料， 不沾染烟酒和吸毒等。抵制诱惑的能力在一定程度上可以预测一个人长期发展的水平。","AbilityType":2,"AbilityCode":"Temptation Resistanc","PreAbilityId":287050436583498,"PreAbility":{"AbilityId":287050436583498,"AbilityName":"自控力","AbilityDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","AbilityType":1,"AbilityCode":"Self Control","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。","Id":48,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的自控能力总体表现为：较差，低于平均水平。综合得分68，超过全国1%的同龄人。与同年龄人相比，该学生的自控力表现不理想，无法对不良习惯或冲动行为进行控制，情绪波动大，容易失控。 在面对冲突或者愿望得不到满足时，常常会用吵闹来解决。非常容易受刚发生的事情的影响，不能很快投入到当前活动中。（建议再次进行测评，以排除诸如客观环境、操作设备等外界因素以及生理条件、心理情绪等内在因素对结果的干扰和影响。）","Id":55,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"较差","Suggest":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。"},"AbilityExtendDescription":[{"Id":24,"AbilityId":287050436583498,"Title":"","Description":"自控力是根据目标和环境的要求，控制改变自己的思想和行为，克服冲动并抵制诱惑，让行为符合社会期许和长期目标的能力。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-08-22T16:36:10"},{"Id":34,"AbilityId":287050436583498,"Title":"","Description":"自控力不足产生不良行为习惯。孩子可能做事拖拉、缺乏效率，例如：起床拖拉、吃饭拖拉、写作业拖拉等，甚至连自己喜欢的事情都比较磨蹭，虽然时时都在监督他，可似乎也不太管用。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:45:51","UpdateTime":"2022-10-11T09:48:07"}],"AbilityScore":{"Score":68.5,"OverAbilityScore":-2.1,"AbilityScorePercentage":1.7864420562816559,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"自控力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/168022604511190.png","Color":"#ea4335","AbilityCode":"Self Control","AbilityType":0,"Id":287050436583498,"Enabled":true,"Deleted":false,"CreateTime":"2019-01-03T15:14:14","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436579413,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"在抵制诱惑方面，六岁的表现低于平均水平。与同龄人相比，在抵制诱惑方面存在一定不足，较容易受到各种诱惑的影响。容易沉浸在游戏或电视节目中，对于作业和大人交代的任务敷衍了事，喜欢吃零食和不健康食品。建议对此给予重视，着重提升该能力。","Id":408,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436579413,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在抵制诱惑的培养上，需要重点关注该生抵制诱惑上的提升。在日常生活中，家长可以通过设置明确的规则帮助孩子管理行为，例如限制零食或电子设备的使用时间。同时，可以引入“等待奖励”的方法，例如告诉孩子完成一项任务后会有额外奖励，从而鼓励他延迟满足。在孩子表现出较好的自控时，及时给予表扬和鼓励，帮助他建立正向反馈机制。还可以尝试用角色扮演的方式，让孩子模拟面对诱惑的情景，学习如何用理性的方式进行自我约束。","Id":761698893828165,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T16:00:44","UpdateTime":"2024-11-22T16:00:44"}],"ReferenceRange":"","Explain":"较差","Suggest":"在抵制诱惑的培养上，需要重点关注该生抵制诱惑上的提升。在日常生活中，家长可以通过设置明确的规则帮助孩子管理行为，例如限制零食或电子设备的使用时间。同时，可以引入“等待奖励”的方法，例如告诉孩子完成一项任务后会有额外奖励，从而鼓励他延迟满足。在孩子表现出较好的自控时，及时给予表扬和鼓励，帮助他建立正向反馈机制。还可以尝试用角色扮演的方式，让孩子模拟面对诱惑的情景，学习如何用理性的方式进行自我约束。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":50.0,"OverAbilityScore":-3.3333333333333335,"AbilityScorePercentage":1.0,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"0.668211319404954","ContentDescription":"本题目要求个体决定是否要闯黄灯但要避免闯红灯，得分为避免闯红灯的次数；分数越高，大脑的冲动性越小。","ContentName":"模拟驾驶","ScientificName":"驾驶模拟风险决策","ContentScore":-1.7976931348623157E+308,"ContentStandardScore":50.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[],"ReferenceRange":"","Explain":"较差","Suggest":null}}],"AbilityDto":{"Name":"抵制诱惑","AbilityClassify":0,"ShortDescription":null,"LongDescription":"抵制诱惑，是指个体能自觉抵制那些能够带来短暂愉悦，却会造成长期伤害的诱惑的能力。具有高的抵制诱惑的能力的人能够让短期利益屈服于长久利益，能够在完成作业后才玩耍，能够抵制垃圾食品和饮料， 不沾染烟酒和吸毒等。抵制诱惑的能力在一定程度上可以预测一个人长期发展的水平。","ParentId":287050436583498,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/182809050086575.png","Color":"#f44f47","AbilityCode":"Temptation Resistanc","AbilityType":0,"Id":287050436579413,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:16","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436595789,"AbilityName":"信息更新","AbilityDescription":"信息更新，是指个体根据环境的要求，放弃旧的信息，快速更新并保持新信息的能力。信息更新的能力是我们能够克服旧信息的影响，快速适应环境发展变化的基础。信息更新能力强的个体能够以当前目标为中心，同时处理多个任务并避免干扰。","AbilityType":2,"AbilityCode":"Updating","PreAbilityId":287050436583498,"PreAbility":{"AbilityId":287050436583498,"AbilityName":"自控力","AbilityDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","AbilityType":1,"AbilityCode":"Self Control","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。","Id":48,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的自控能力总体表现为：较差，低于平均水平。综合得分68，超过全国1%的同龄人。与同年龄人相比，该学生的自控力表现不理想，无法对不良习惯或冲动行为进行控制，情绪波动大，容易失控。 在面对冲突或者愿望得不到满足时，常常会用吵闹来解决。非常容易受刚发生的事情的影响，不能很快投入到当前活动中。（建议再次进行测评，以排除诸如客观环境、操作设备等外界因素以及生理条件、心理情绪等内在因素对结果的干扰和影响。）","Id":55,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"较差","Suggest":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。"},"AbilityExtendDescription":[{"Id":24,"AbilityId":287050436583498,"Title":"","Description":"自控力是根据目标和环境的要求，控制改变自己的思想和行为，克服冲动并抵制诱惑，让行为符合社会期许和长期目标的能力。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-08-22T16:36:10"},{"Id":34,"AbilityId":287050436583498,"Title":"","Description":"自控力不足产生不良行为习惯。孩子可能做事拖拉、缺乏效率，例如：起床拖拉、吃饭拖拉、写作业拖拉等，甚至连自己喜欢的事情都比较磨蹭，虽然时时都在监督他，可似乎也不太管用。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:45:51","UpdateTime":"2022-10-11T09:48:07"}],"AbilityScore":{"Score":68.5,"OverAbilityScore":-2.1,"AbilityScorePercentage":1.7864420562816559,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"自控力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/168022604511190.png","Color":"#ea4335","AbilityCode":"Self Control","AbilityType":0,"Id":287050436583498,"Enabled":true,"Deleted":false,"CreateTime":"2019-01-03T15:14:14","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"A","AbilityLevelName":"良好","LevelExpression":"{0}>=115 and {0}<121","AbilitylevelReference":[{"AbilityId":287050436595789,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":10,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在信息更新的培养上，该生信息更新发展较好，可以考虑对该学生的信息更新提出更高的要求。在日常生活中，可以引导学生尝试跨学科的学习方法，通过将不同学科的知识相结合，提升信息整合和迁移的能力。例如，通过分析实际案例（如社会问题或科学现象）来挖掘信息之间的深层联系。同时，可鼓励学生参与需要高强度信息处理的活动，例如辩论赛或研究项目，进一步提高其在复杂任务中的信息更新能力。","Id":761696538484813,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T15:51:08","UpdateTime":"2024-11-22T15:52:42"}],"ReferenceRange":"","Explain":"良好","Suggest":"在信息更新的培养上，该生信息更新发展较好，可以考虑对该学生的信息更新提出更高的要求。在日常生活中，可以引导学生尝试跨学科的学习方法，通过将不同学科的知识相结合，提升信息整合和迁移的能力。例如，通过分析实际案例（如社会问题或科学现象）来挖掘信息之间的深层联系。同时，可鼓励学生参与需要高强度信息处理的活动，例如辩论赛或研究项目，进一步提高其在复杂任务中的信息更新能力。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":115.0,"OverAbilityScore":1.0,"AbilityScorePercentage":84.1344746068543,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"3.734634038800706","ContentDescription":"本题目要求个体判断物体的特征并记住其出现的位置，得分为记住的物体数量；分数越高，大脑操作记忆能力越强。","ContentName":"蝴蝶照相机","ScientificName":"操作记忆广度","ContentScore":7.0,"ContentStandardScore":115.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"A","AbilityLevelName":"良好","LevelExpression":"{0}>=115 and {0}<121","AbilitylevelReference":[],"ReferenceRange":"","Explain":"良好","Suggest":null}}],"AbilityDto":{"Name":"信息更新","AbilityClassify":1,"ShortDescription":null,"LongDescription":"信息更新，是指个体根据环境的要求，放弃旧的信息，快速更新并保持新信息的能力。信息更新的能力是我们能够克服旧信息的影响，快速适应环境发展变化的基础。信息更新能力强的个体能够以当前目标为中心，同时处理多个任务并避免干扰。","ParentId":287050436583498,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/182955749079448.png","Color":"#f4736c","AbilityCode":"Updating","AbilityType":0,"Id":287050436595789,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:16","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436591717,"AbilityName":"控制冲动","AbilityDescription":"控制冲动，是指人控制无意识或本能冲动行为，以及克服不良习惯的能力。好的控制冲动能力表现为能够保持安静、不乱动，情绪稳定，攻击性低等。控制冲动能力差则有可能发展出很多问题行为，如攻击行为或者强迫行为等。","AbilityType":2,"AbilityCode":"Impulsivity Control","PreAbilityId":287050436583498,"PreAbility":{"AbilityId":287050436583498,"AbilityName":"自控力","AbilityDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","AbilityType":1,"AbilityCode":"Self Control","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。","Id":48,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的自控能力总体表现为：较差，低于平均水平。综合得分68，超过全国1%的同龄人。与同年龄人相比，该学生的自控力表现不理想，无法对不良习惯或冲动行为进行控制，情绪波动大，容易失控。 在面对冲突或者愿望得不到满足时，常常会用吵闹来解决。非常容易受刚发生的事情的影响，不能很快投入到当前活动中。（建议再次进行测评，以排除诸如客观环境、操作设备等外界因素以及生理条件、心理情绪等内在因素对结果的干扰和影响。）","Id":55,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"较差","Suggest":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。"},"AbilityExtendDescription":[{"Id":24,"AbilityId":287050436583498,"Title":"","Description":"自控力是根据目标和环境的要求，控制改变自己的思想和行为，克服冲动并抵制诱惑，让行为符合社会期许和长期目标的能力。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-08-22T16:36:10"},{"Id":34,"AbilityId":287050436583498,"Title":"","Description":"自控力不足产生不良行为习惯。孩子可能做事拖拉、缺乏效率，例如：起床拖拉、吃饭拖拉、写作业拖拉等，甚至连自己喜欢的事情都比较磨蹭，虽然时时都在监督他，可似乎也不太管用。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:45:51","UpdateTime":"2022-10-11T09:48:07"}],"AbilityScore":{"Score":68.5,"OverAbilityScore":-2.1,"AbilityScorePercentage":1.7864420562816559,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"自控力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/168022604511190.png","Color":"#ea4335","AbilityCode":"Self Control","AbilityType":0,"Id":287050436583498,"Enabled":true,"Deleted":false,"CreateTime":"2019-01-03T15:14:14","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436591717,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"在控制冲动方面，六岁的表现低于平均水平。与同龄人相比，在控制冲动行为上存在一定不足。通常喜欢插嘴或打扰他人，上课时喜欢东张西望、玩东西，情绪容易失控，常常发脾气或喜欢和同学打闹等。建议对此给予重视，着重提升该能力。","Id":397,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436591717,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在控制冲动的培养上，需要重点加以关注。在日常生活中，可以通过设置明确的规则帮助学生建立行为边界，例如规定完成家庭作业后才能玩游戏。此外，可以利用等待奖励的方法，让孩子体验延迟满足带来的积极反馈，例如通过等待一段时间获得更大的奖励。在孩子表现出较好的自控时，应及时给予鼓励，以帮助其逐步建立对冲动行为的克制能力。","Id":761697195696197,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T15:53:49","UpdateTime":"2024-11-22T15:53:49"}],"ReferenceRange":"","Explain":"较差","Suggest":"在控制冲动的培养上，需要重点加以关注。在日常生活中，可以通过设置明确的规则帮助学生建立行为边界，例如规定完成家庭作业后才能玩游戏。此外，可以利用等待奖励的方法，让孩子体验延迟满足带来的积极反馈，例如通过等待一段时间获得更大的奖励。在孩子表现出较好的自控时，应及时给予鼓励，以帮助其逐步建立对冲动行为的克制能力。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":60.0,"OverAbilityScore":-2.6666666666666665,"AbilityScorePercentage":1.0,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"688.488278656629","ContentDescription":"本题目要求个体在快速反应的同时能够根据提示及时停下的能力，得分为准确回答的个数；分数越高，大脑的抑制冲动能力越强。","ContentName":"变色魔块","ScientificName":"停止信号","ContentScore":817.8888888888889,"ContentStandardScore":60.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[],"ReferenceRange":"","Explain":"较差","Suggest":null}}],"AbilityDto":{"Name":"控制冲动","AbilityClassify":0,"ShortDescription":null,"LongDescription":"控制冲动，是指人控制无意识或本能冲动行为，以及克服不良习惯的能力。好的控制冲动能力表现为能够保持安静、不乱动，情绪稳定，攻击性低等。控制冲动能力差则有可能发展出很多问题行为，如攻击行为或者强迫行为等。","ParentId":287050436583498,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/182902075320901.png","Color":"#e23229","AbilityCode":"Impulsivity Control","AbilityType":0,"Id":287050436591717,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:16","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583498,"AbilityName":"自控力","AbilityDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","AbilityType":1,"AbilityCode":"Self Control","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。","Id":48,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436583498,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的自控能力总体表现为：较差，低于平均水平。综合得分68，超过全国1%的同龄人。与同年龄人相比，该学生的自控力表现不理想，无法对不良习惯或冲动行为进行控制，情绪波动大，容易失控。 在面对冲突或者愿望得不到满足时，常常会用吵闹来解决。非常容易受刚发生的事情的影响，不能很快投入到当前活动中。（建议再次进行测评，以排除诸如客观环境、操作设备等外界因素以及生理条件、心理情绪等内在因素对结果的干扰和影响。）","Id":55,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"较差","Suggest":"在自控力的培养上，需要重点加以关注。在平时的生活中，可以配合大脑课堂的理论知识向学生讲述延迟满足的重要性，让其认识到自控力的重要性；鼓励该学生对自己的行动意向有所察觉以及控制，推荐采用三步法：停下来、想一想、决定做不做；在日常生活注重提高孩子延迟满足的能力，包括买玩具、吃零食和玩游戏等。父母是孩子最重要的学习榜样，所以首先要以身作则，给孩子树立一个良好的榜样。在面对诱惑的时候成功抵制，在要发脾气的时候及时控制，在出现错误的时候及时改正。"},"AbilityExtendDescription":[{"Id":24,"AbilityId":287050436583498,"Title":"","Description":"自控力是根据目标和环境的要求，控制改变自己的思想和行为，克服冲动并抵制诱惑，让行为符合社会期许和长期目标的能力。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-08-22T16:36:10"},{"Id":34,"AbilityId":287050436583498,"Title":"","Description":"自控力不足产生不良行为习惯。孩子可能做事拖拉、缺乏效率，例如：起床拖拉、吃饭拖拉、写作业拖拉等，甚至连自己喜欢的事情都比较磨蹭，虽然时时都在监督他，可似乎也不太管用。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:45:51","UpdateTime":"2022-10-11T09:48:07"}],"AbilityScore":{"Score":68.5,"OverAbilityScore":-2.1,"AbilityScorePercentage":1.7864420562816559,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"自控力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/168022604511190.png","Color":"#ea4335","AbilityCode":"Self Control","AbilityType":0,"Id":287050436583498,"Enabled":true,"Deleted":false,"CreateTime":"2019-01-03T15:14:14","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436595791,"AbilityName":"短时记忆","AbilityDescription":"短时记忆，是头脑中短暂保存信息的能力，常用容量来衡量。它相当于计算机的内存，是我们思维的基础。短时记忆容量高的人往往具有更高的思维水平，能解决更为复杂的问题。它也是外界信息进入长时记忆的必由之路，大量的信息必须在短时记忆中得到充分的复述和加工才能进入长时记忆。","AbilityType":2,"AbilityCode":"Short-term Memory","PreAbilityId":287050436583510,"PreAbility":{"AbilityId":287050436583510,"AbilityName":"记忆力","AbilityDescription":"记忆是人们将经历的事件和学习的知识和技能存储到大脑，并合理运用。记忆是人脑最重要的功能之一，也是人们学习和生存的基本前提。人脑包含复杂的记忆系统，其中联系记忆、语义记忆，和短时记忆是三个重要的方面 。","AbilityType":1,"AbilityCode":"Memory","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436583510,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在记忆力的培养上，需要重点关注该生记忆力上的提升。在平时的生活中，可以有意识的进行一些加强记忆的训练，比如睡前引导该学生对今天所发生的事情进行复述以及回忆，重点要求其回忆具体细节，特别是一些数字、地点以及人物类的信息；在家中进行一些有助于提高记忆力的小游戏；在看电视或者听故事的时候，鼓励该学生对卡通人物或物体进行形象记忆，用语言或者绘画来回忆故事内容。","Id":26,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436583510,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的记忆能力总体表现为：较差，低于平均水平。综合得分70，超过全国2%的同龄人。与同年龄人相比，该学生记忆表现不理想，不能根据任务要求进行正确的记忆，对于记忆内容细节无法把握，记忆保持时间短。为了记住生活和学习中的一般知识，该生需要比同龄人付出更多的努力才能掌握，同时需要及时反复复习才能避免遗忘。（建议再次进行测评，以排除诸如客观环境、操作设备等外界因素以及生理条件、心理情绪等内在因素对结果的干扰和影响。）","Id":33,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"较差","Suggest":"在记忆力的培养上，需要重点关注该生记忆力上的提升。在平时的生活中，可以有意识的进行一些加强记忆的训练，比如睡前引导该学生对今天所发生的事情进行复述以及回忆，重点要求其回忆具体细节，特别是一些数字、地点以及人物类的信息；在家中进行一些有助于提高记忆力的小游戏；在看电视或者听故事的时候，鼓励该学生对卡通人物或物体进行形象记忆，用语言或者绘画来回忆故事内容。"},"AbilityExtendDescription":[{"Id":23,"AbilityId":287050436583510,"Title":"","Description":"记忆力是人脑智力的集中体现，个体的生存和发展需要不断掌握新的知识，记忆力能将这些知识经验存储下来并合理运用。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-08-22T16:35:25"},{"Id":32,"AbilityId":287050436583510,"Title":"","Description":"记忆力不足会影响孩子学习成绩。记忆力对于学习有着很重要的作用，如果孩子记忆力差，那么最直接的影响就是学习成绩不好。可以说不论学习什么，首先都需要记忆，尤其是长期记忆能力。若孩子记忆力差，无法保持长时记忆，对学习影响很大，成绩会比一般孩子差。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:43:29","UpdateTime":"2022-11-02T18:11:02"}],"AbilityScore":{"Score":70.0,"OverAbilityScore":-2.0,"AbilityScorePercentage":2.2750131948179217,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"记忆力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"记忆是人们将经历的事件和学习的知识和技能存储到大脑，并合理运用。记忆是人脑最重要的功能之一，也是人们学习和生存的基本前提。人脑包含复杂的记忆系统，其中联系记忆、语义记忆，和短时记忆是三个重要的方面 。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/168281454707140.png","Color":"#34a853","AbilityCode":"Memory","AbilityType":0,"Id":287050436583510,"Enabled":true,"Deleted":false,"CreateTime":"2019-01-04T16:22:12","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436595791,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"在短时记忆方面，六岁的表现低于平均水平。与同龄人相比，在短时记忆方面存在一定不足。头脑中短时保持的信息数量有限。理解复杂或较长的句子或者进行复杂心算时，存在一定的困难。建议对此给予重视，着重提升该能力。","Id":386,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436595791,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在短时记忆的培养上，需要重点关注该生短时记忆上的提升。建议从基础入手，培养学生理解记忆和分散学习的能力。在理解的基础上进行记忆，通过将学习内容分解为小单元逐步掌握，建立新旧知识的联系。此外，可以采用重复学习的方法巩固记忆，例如定期进行知识点的复习和口述回忆。同时，结合趣味性的小游戏（如单词配对、卡片记忆）提高短时记忆能力。","Id":761697971474501,"Enabled":true,"Deleted":false,"CreateTime":"2024-11-22T15:56:58","UpdateTime":"2024-11-22T15:56:58"}],"ReferenceRange":"","Explain":"较差","Suggest":"在短时记忆的培养上，需要重点关注该生短时记忆上的提升。建议从基础入手，培养学生理解记忆和分散学习的能力。在理解的基础上进行记忆，通过将学习内容分解为小单元逐步掌握，建立新旧知识的联系。此外，可以采用重复学习的方法巩固记忆，例如定期进行知识点的复习和口述回忆。同时，结合趣味性的小游戏（如单词配对、卡片记忆）提高短时记忆能力。"},"AbilityExtendDescription":[],"AbilityScore":{"Score":70.0,"OverAbilityScore":-2.0,"AbilityScorePercentage":2.2750131948179217,"KeyScore":0.0},"ContentInfos":[{"ContentAverageScore":"5.32023946997","ContentDescription":"本题目要求个体按顺序记住依次出现方块的位置，得分为能准确记住位置的数量；分数越高，大脑空间短时记忆能力越强。","ContentName":"位置记忆","ScientificName":"空间记忆广度","ContentScore":5.083333333333334,"ContentStandardScore":70.0,"AbilityId":0,"ContentLevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[],"ReferenceRange":"","Explain":"较差","Suggest":null}}],"AbilityDto":{"Name":"短时记忆","AbilityClassify":0,"ShortDescription":null,"LongDescription":"短时记忆，是头脑中短暂保存信息的能力，常用容量来衡量。它相当于计算机的内存，是我们思维的基础。短时记忆容量高的人往往具有更高的思维水平，能解决更为复杂的问题。它也是外界信息进入长时记忆的必由之路，大量的信息必须在短时记忆中得到充分的复述和加工才能进入长时记忆。","ParentId":287050436583510,"LevelNumber":2,"Icon":"https://static.iquizoo.com/brain/image/question/183154055251007.png","Color":"#71ea71","AbilityCode":"Short-term Memory","AbilityType":0,"Id":287050436595791,"Enabled":true,"Deleted":false,"CreateTime":"2018-12-11T13:29:15","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583510,"AbilityName":"记忆力","AbilityDescription":"记忆是人们将经历的事件和学习的知识和技能存储到大脑，并合理运用。记忆是人脑最重要的功能之一，也是人们学习和生存的基本前提。人脑包含复杂的记忆系统，其中联系记忆、语义记忆，和短时记忆是三个重要的方面 。","AbilityType":1,"AbilityCode":"Memory","PreAbilityId":287050436579451,"PreAbility":{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":"D","AbilityLevelName":"急需改进","LevelExpression":"{0}<73","AbilitylevelReference":[{"AbilityId":287050436583510,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":3,"ReferenceType":"suggestion","Content":"在记忆力的培养上，需要重点关注该生记忆力上的提升。在平时的生活中，可以有意识的进行一些加强记忆的训练，比如睡前引导该学生对今天所发生的事情进行复述以及回忆，重点要求其回忆具体细节，特别是一些数字、地点以及人物类的信息；在家中进行一些有助于提高记忆力的小游戏；在看电视或者听故事的时候，鼓励该学生对卡通人物或物体进行形象记忆，用语言或者绘画来回忆故事内容。","Id":26,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"},{"AbilityId":287050436583510,"AbilityEvaluationSysId":268008976183366,"AbilityLevelId":2,"ReferenceTypeId":2,"ReferenceType":"survey","Content":"六岁的记忆能力总体表现为：较差，低于平均水平。综合得分70，超过全国2%的同龄人。与同年龄人相比，该学生记忆表现不理想，不能根据任务要求进行正确的记忆，对于记忆内容细节无法把握，记忆保持时间短。为了记住生活和学习中的一般知识，该生需要比同龄人付出更多的努力才能掌握，同时需要及时反复复习才能避免遗忘。（建议再次进行测评，以排除诸如客观环境、操作设备等外界因素以及生理条件、心理情绪等内在因素对结果的干扰和影响。）","Id":33,"Enabled":true,"Deleted":false,"CreateTime":"2020-11-12T14:17:32","UpdateTime":"2022-05-11T15:28:30"}],"ReferenceRange":"","Explain":"较差","Suggest":"在记忆力的培养上，需要重点关注该生记忆力上的提升。在平时的生活中，可以有意识的进行一些加强记忆的训练，比如睡前引导该学生对今天所发生的事情进行复述以及回忆，重点要求其回忆具体细节，特别是一些数字、地点以及人物类的信息；在家中进行一些有助于提高记忆力的小游戏；在看电视或者听故事的时候，鼓励该学生对卡通人物或物体进行形象记忆，用语言或者绘画来回忆故事内容。"},"AbilityExtendDescription":[{"Id":23,"AbilityId":287050436583510,"Title":"","Description":"记忆力是人脑智力的集中体现，个体的生存和发展需要不断掌握新的知识，记忆力能将这些知识经验存储下来并合理运用。","Type":2,"Enabled":true,"Deleted":false,"CreateTime":"2022-08-22T16:34:00","UpdateTime":"2022-08-22T16:35:25"},{"Id":32,"AbilityId":287050436583510,"Title":"","Description":"记忆力不足会影响孩子学习成绩。记忆力对于学习有着很重要的作用，如果孩子记忆力差，那么最直接的影响就是学习成绩不好。可以说不论学习什么，首先都需要记忆，尤其是长期记忆能力。若孩子记忆力差，无法保持长时记忆，对学习影响很大，成绩会比一般孩子差。","Type":1,"Enabled":true,"Deleted":false,"CreateTime":"2022-10-11T09:43:29","UpdateTime":"2022-11-02T18:11:02"}],"AbilityScore":{"Score":70.0,"OverAbilityScore":-2.0,"AbilityScorePercentage":2.2750131948179217,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"记忆力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"记忆是人们将经历的事件和学习的知识和技能存储到大脑，并合理运用。记忆是人脑最重要的功能之一，也是人们学习和生存的基本前提。人脑包含复杂的记忆系统，其中联系记忆、语义记忆，和短时记忆是三个重要的方面 。","ParentId":287050436579451,"LevelNumber":1,"Icon":"https://static.iquizoo.com/brain/image/question/168281454707140.png","Color":"#34a853","AbilityCode":"Memory","AbilityType":0,"Id":287050436583510,"Enabled":true,"Deleted":false,"CreateTime":"2019-01-04T16:22:12","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579451,"AbilityName":"基础能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"BCI","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":79.91999999999999,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"基础能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1D53F5","AbilityCode":"BCI","AbilityType":0,"Id":287050436579451,"Enabled":true,"Deleted":false,"CreateTime":"2019-04-20T15:21:57","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587619,"AbilityName":"注意力","AbilityDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","AbilityType":2,"AbilityCode":"Attention","PreAbilityId":287050436579438,"PreAbility":{"AbilityId":287050436579438,"AbilityName":"认知能力","AbilityDescription":null,"AbilityType":1,"AbilityCode":"cognitive ability","PreAbilityId":287050436583506,"PreAbility":{"AbilityId":287050436583506,"AbilityName":"ADHD能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"ADHD能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1382d7","AbilityCode":"","AbilityType":0,"Id":287050436583506,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-25T17:19:26","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"认知能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"认知能力是个体胜任日常学习、工作和生活的诸多能力的统称，本测评主要从注意力、执行功能、冲动控制三个方面测评个体的认知能力。","ParentId":287050436583506,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#8bc0e8","AbilityCode":"cognitive ability","AbilityType":0,"Id":287050436579438,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-30T10:43:50","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":5.5,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"注意力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"注意是大脑接收和处理个体外部和内部信息的前提，只有被注意到的信息才能得到有效的分析和处理，并用来解决问题并形成持久的记忆。注意力包含选择注意、持续注意、分配注意等三个能力维度。","ParentId":287050436579438,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#060000","AbilityCode":"Attention","AbilityType":0,"Id":287050436587619,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-30T10:47:27","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436591714,"AbilityName":"自控力","AbilityDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","AbilityType":2,"AbilityCode":"Self Control","PreAbilityId":287050436579438,"PreAbility":{"AbilityId":287050436579438,"AbilityName":"认知能力","AbilityDescription":null,"AbilityType":1,"AbilityCode":"cognitive ability","PreAbilityId":287050436583506,"PreAbility":{"AbilityId":287050436583506,"AbilityName":"ADHD能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"ADHD能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1382d7","AbilityCode":"","AbilityType":0,"Id":287050436583506,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-25T17:19:26","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"认知能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"认知能力是个体胜任日常学习、工作和生活的诸多能力的统称，本测评主要从注意力、执行功能、冲动控制三个方面测评个体的认知能力。","ParentId":287050436583506,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#8bc0e8","AbilityCode":"cognitive ability","AbilityType":0,"Id":287050436579438,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-30T10:43:50","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":7.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"自控力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"自控力是人们能够根据目标和环境的要求，控制和改变自己的思想和行为，克服冲动，并抵制诱惑，让自己的行为符合社会期许和长期目标。自控力主要体现为控制冲动的能力，抵制诱惑的能力以及信息更新的能力。","ParentId":287050436579438,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%B3%A8%E6%84%8F%E5%8A%9B50%C3%9750.png","Color":"#9abeda","AbilityCode":"Self Control","AbilityType":0,"Id":287050436591714,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-30T10:47:07","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579438,"AbilityName":"认知能力","AbilityDescription":null,"AbilityType":1,"AbilityCode":"cognitive ability","PreAbilityId":287050436583506,"PreAbility":{"AbilityId":287050436583506,"AbilityName":"ADHD能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"ADHD能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1382d7","AbilityCode":"","AbilityType":0,"Id":287050436583506,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-25T17:19:26","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"认知能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":"认知能力是个体胜任日常学习、工作和生活的诸多能力的统称，本测评主要从注意力、执行功能、冲动控制三个方面测评个体的认知能力。","ParentId":287050436583506,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#8bc0e8","AbilityCode":"cognitive ability","AbilityType":0,"Id":287050436579438,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-30T10:43:50","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583506,"AbilityName":"ADHD能力","AbilityDescription":null,"AbilityType":0,"AbilityCode":"","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":6.25,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"ADHD能力","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/edit/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#1382d7","AbilityCode":"","AbilityType":0,"Id":287050436583506,"Enabled":true,"Deleted":false,"CreateTime":"2019-10-25T17:19:26","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587591,"AbilityName":"人际协助","AbilityDescription":"个体可以通过有意义的人际关系获取帮助或宣泄情绪","AbilityType":2,"AbilityCode":"help-seeking","PreAbilityId":287050436579448,"PreAbility":{"AbilityId":287050436579448,"AbilityName":"心理韧性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"mental toughness","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":17.4,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理韧性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5a7081","AbilityCode":"mental toughness","AbilityType":0,"Id":287050436579448,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:10","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"人际协助","AbilityClassify":0,"ShortDescription":null,"LongDescription":"个体可以通过有意义的人际关系获取帮助或宣泄情绪","ParentId":287050436579448,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#8d979f","AbilityCode":"help-seeking","AbilityType":0,"Id":287050436587591,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:48","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579399,"AbilityName":"情绪控制","AbilityDescription":"困境中对情绪波动和悲观的控制和调整","AbilityType":2,"AbilityCode":"affect control","PreAbilityId":287050436579448,"PreAbility":{"AbilityId":287050436579448,"AbilityName":"心理韧性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"mental toughness","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":17.4,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理韧性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5a7081","AbilityCode":"mental toughness","AbilityType":0,"Id":287050436579448,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:10","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":20.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"情绪控制","AbilityClassify":0,"ShortDescription":null,"LongDescription":"困境中对情绪波动和悲观的控制和调整","ParentId":287050436579448,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5d7485","AbilityCode":"affect control","AbilityType":0,"Id":287050436579399,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T17:12:32","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587598,"AbilityName":"积极认知","AbilityDescription":"对逆境的辨证看法和乐观态度","AbilityType":2,"AbilityCode":"positive thinking","PreAbilityId":287050436579448,"PreAbility":{"AbilityId":287050436579448,"AbilityName":"心理韧性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"mental toughness","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":17.4,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理韧性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5a7081","AbilityCode":"mental toughness","AbilityType":0,"Id":287050436579448,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:10","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":10.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"积极认知","AbilityClassify":0,"ShortDescription":null,"LongDescription":"对逆境的辨证看法和乐观态度","ParentId":287050436579448,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#748a9c","AbilityCode":"positive thinking","AbilityType":0,"Id":287050436587598,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T17:13:07","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436591727,"AbilityName":"目标专注","AbilityDescription":"在困境中坚持目标、制订计划、集中精力解决问题","AbilityType":2,"AbilityCode":"goal planning","PreAbilityId":287050436579448,"PreAbility":{"AbilityId":287050436579448,"AbilityName":"心理韧性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"mental toughness","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":17.4,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理韧性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5a7081","AbilityCode":"mental toughness","AbilityType":0,"Id":287050436579448,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:10","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":16.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"目标专注","AbilityClassify":0,"ShortDescription":null,"LongDescription":"在困境中坚持目标、制订计划、集中精力解决问题","ParentId":287050436579448,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#4e7999","AbilityCode":"goal planning","AbilityType":0,"Id":287050436591727,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T17:10:52","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587607,"AbilityName":"家庭支持","AbilityDescription":"家人的宽容、尊重和支持性态度","AbilityType":2,"AbilityCode":"family support","PreAbilityId":287050436579448,"PreAbility":{"AbilityId":287050436579448,"AbilityName":"心理韧性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"mental toughness","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":17.4,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理韧性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5a7081","AbilityCode":"mental toughness","AbilityType":0,"Id":287050436579448,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:10","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":22.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"家庭支持","AbilityClassify":0,"ShortDescription":null,"LongDescription":"家人的宽容、尊重和支持性态度","ParentId":287050436579448,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#97a7b3","AbilityCode":"family support","AbilityType":0,"Id":287050436587607,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T17:11:58","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579448,"AbilityName":"心理韧性","AbilityDescription":null,"AbilityType":1,"AbilityCode":"mental toughness","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":17.4,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理韧性","AbilityClassify":0,"ShortDescription":null,"LongDescription":"心理韧性是个体能够承受高水平的破坏性变化并同时表现出尽可能少的不良行为的能力；心理韧性是个体从消极经历中恢复过来，并且灵活地适应外界多变环境的能力。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#5a7081","AbilityCode":"mental toughness","AbilityType":0,"Id":287050436579448,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:06:10","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436591709,"AbilityName":"先天与后天","AbilityDescription":"先天与后天考察个体对能力是天生还是后天决定的态度，考察其对个人后天努力改变能力的信心。","AbilityType":2,"AbilityCode":"nature and nurture","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":26.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"先天与后天","AbilityClassify":0,"ShortDescription":null,"LongDescription":"先天与后天考察个体对能力是天生还是后天决定的态度，考察其对个人后天努力改变能力的信心。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#406c8e","AbilityCode":"nature and nurture","AbilityType":0,"Id":287050436591709,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-12T15:35:41","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587625,"AbilityName":"现在与将来","AbilityDescription":"现在与将来考察个体对待个体成长空间、个体能力限度等方面的态度。","AbilityType":2,"AbilityCode":"present and future","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":21.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"现在与将来","AbilityClassify":0,"ShortDescription":null,"LongDescription":"现在与将来考察个体对待个体成长空间、个体能力限度等方面的态度。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#607d93","AbilityCode":"present and future","AbilityType":0,"Id":287050436587625,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:02:14","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583535,"AbilityName":"拥抱与拒绝学习","AbilityDescription":"拥抱与拒绝学习测量了个体对待学习的态度，考察个体对学习、学习能力、学习新东西的看法。","AbilityType":2,"AbilityCode":"embrace and refuse learning","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"拥抱与拒绝学习","AbilityClassify":0,"ShortDescription":null,"LongDescription":"拥抱与拒绝学习测量了个体对待学习的态度，考察个体对学习、学习能力、学习新东西的看法。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#8a939a","AbilityCode":"embrace and refuse learning","AbilityType":0,"Id":287050436583535,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:00:16","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579440,"AbilityName":"对于完美态度","AbilityDescription":"完美态度考察个体对于个体进步空间、个体努力的价值等方面的态度。","AbilityType":2,"AbilityCode":"perfectionism","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":22.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"对于完美态度","AbilityClassify":0,"ShortDescription":null,"LongDescription":"完美态度考察个体对于个体进步空间、个体努力的价值等方面的态度。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#466176","AbilityCode":"perfectionism","AbilityType":0,"Id":287050436579440,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:02:52","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587604,"AbilityName":"失败与成长","AbilityDescription":"失败与成长考察个体面临失败的态度与处理方式，考察其对失败与个人成长的看法。","AbilityType":2,"AbilityCode":"failure and growth","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":24.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"失败与成长","AbilityClassify":0,"ShortDescription":null,"LongDescription":"失败与成长考察个体面临失败的态度与处理方式，考察其对失败与个人成长的看法。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#73899a","AbilityCode":"failure and growth","AbilityType":0,"Id":287050436587604,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:04:06","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436591689,"AbilityName":"积极与消极","AbilityDescription":"积极与消极考察个体的积极心态与消极心态，考察其对自我的认识与评判。","AbilityType":2,"AbilityCode":"positive and negative","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":12.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"积极与消极","AbilityClassify":0,"ShortDescription":null,"LongDescription":"积极与消极考察个体的积极心态与消极心态，考察其对自我的认识与评判。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#577489","AbilityCode":"positive and negative","AbilityType":0,"Id":287050436591689,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:04:49","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436579405,"AbilityName":"开放与保守","AbilityDescription":"开放与保守测量了个体对待新事物的态度，考察其对新事物、新挑战、新学习的应对能力。","AbilityType":2,"AbilityCode":"open and conservative","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"开放与保守","AbilityClassify":0,"ShortDescription":null,"LongDescription":"开放与保守测量了个体对待新事物的态度，考察其对新事物、新挑战、新学习的应对能力。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#487495","AbilityCode":"open and conservative","AbilityType":0,"Id":287050436579405,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:01:25","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436583548,"AbilityName":"坚持与放弃","AbilityDescription":"坚持与放弃考察个体面对困难、挫折与挑战的态度。","AbilityType":2,"AbilityCode":"hold on and give up","PreAbilityId":287050436587632,"PreAbility":{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":16.0,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"坚持与放弃","AbilityClassify":0,"ShortDescription":null,"LongDescription":"坚持与放弃考察个体面对困难、挫折与挑战的态度。","ParentId":287050436587632,"LevelNumber":2,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E6%80%9D%E7%BB%B4%E5%8A%9B50%C3%9750.png","Color":"#58778f","AbilityCode":"hold on and give up","AbilityType":0,"Id":287050436583548,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T10:03:30","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587632,"AbilityName":"成长型思维","AbilityDescription":null,"AbilityType":1,"AbilityCode":"growth mindset","PreAbilityId":287050436587633,"PreAbility":{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":19.875,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"成长型思维","AbilityClassify":0,"ShortDescription":null,"LongDescription":"成长型思维模式是一种有利于个体不断挑战与前进的思维模式，它认为所有的事情都离不开个人的努力，世界上充满了有趣的挑战，只要我们掌握方法并为之努力总能有所收获。该问卷用于测量个体成长型思维模式的强弱。","ParentId":287050436587633,"LevelNumber":1,"Icon":"https://static.iquizoo.com/eval3.x/pro/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B50%C3%9750.png","Color":"#6084a0","AbilityCode":"growth mindset","AbilityType":0,"Id":287050436587632,"Enabled":true,"Deleted":false,"CreateTime":"2020-10-10T09:59:08","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":287050436587633,"AbilityName":"心理品质","AbilityDescription":null,"AbilityType":0,"AbilityCode":"QS","PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":null,"AbilityLevelName":null,"LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":18.6375,"OverAbilityScore":0.0,"AbilityScorePercentage":0.0,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":"心理品质","AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":"https://static.iquizoo.com/eval3.x/dev/content/dicability/add/%E5%8F%8D%E5%BA%94%E5%8A%9B200%C3%97200.png","Color":"#b3bec6","AbilityCode":"QS","AbilityType":0,"Id":287050436587633,"Enabled":true,"Deleted":false,"CreateTime":"2020-03-24T17:40:13","UpdateTime":"0001-01-01T00:00:00"}},{"AbilityId":0,"AbilityName":"BCAI","AbilityDescription":null,"AbilityType":0,"AbilityCode":null,"PreAbilityId":null,"PreAbility":null,"Abilitylevel":{"AbilityLevel":"C","AbilityLevelName":"亟待提升","LevelExpression":null,"AbilitylevelReference":[],"ReferenceRange":null,"Explain":null,"Suggest":null},"AbilityExtendDescription":[],"AbilityScore":{"Score":74.6992,"OverAbilityScore":0.0,"AbilityScorePercentage":4.5828602258455415,"KeyScore":0.0},"ContentInfos":[],"AbilityDto":{"Name":null,"AbilityClassify":0,"ShortDescription":null,"LongDescription":null,"ParentId":null,"LevelNumber":0,"Icon":null,"Color":null,"AbilityCode":null,"AbilityType":0,"Id":0,"Enabled":false,"Deleted":false,"CreateTime":"0001-01-01T00:00:00","UpdateTime":"0001-01-01T00:00:00"}}]
+    var Ability = {
+        '持续注意': '指孩子在较长时间内专注于某项任务或活动的能力，帮助抵御干扰并提高学习效率。',
+        '分配注意': '指孩子在多任务情境下灵活分配注意力的能力，能够在不同任务之间快速切换并保持高效。',
+        '选择注意': '指孩子在干扰情境中筛选和聚焦关键信息的能力，有助于快速抓住重点，避免被无关信息干扰。',
+        '短时记忆': '指孩子在短时间内记住并加工信息的能力，为理解和解决问题提供重要支持。',
+        '控制冲动': '指孩子抑制冲动行为、延迟满足的能力，帮助他们在复杂情境中保持冷静和自控。',
+        '信息更新': '指孩子在执行任务过程中及时接收、删除和替换旧信息的能力，能够快速适应变化并调整策略，提高任务完成效率。',
+        '抵制诱惑': '指孩子在面对即时诱惑时选择克制并坚持更长远目标的能力，有助于培养耐心和理性决策。',
+    }
+    var Table = {
+        '目标专注': {
+            range: '5-25',
+            desc: '目标专注衡量个体在困难或压力下是否能够保持清晰的目标感并专注于实现目标。分数越高，说明个体具有强烈的目标意识和行动力，即使在压力下也能坚持规划和执行；分数越低，可能表明个体容易受外界干扰，目标意识不足或缺乏毅力。',
+        },
+        '情绪控制': {
+            range: '6-30',
+            desc: '情绪控制衡量个体在面对挫折或困难时对负面情绪的调节能力。分数越高，说明个体能够迅速调整情绪，保持理性思考，从而更有效地解决问题；分数越低，可能表明个体容易被情绪困扰，建议加强情绪管理和调节能力。',
+        },
+        '积极认知': {
+            range: '4-20',
+            desc: '积极认知衡量个体是否能以乐观的态度看待问题并从困难中发现成长机会。分数越高，说明个体倾向于正向思维，能够在逆境中保持积极心态；分数越低，可能反映出个体容易专注于负面影响，需培养发现积极面的能力。',
+        },
+        '家庭支持': {
+            range: '6-30',
+            desc: '家庭支持衡量个体感受到的来自家庭的情感关怀和支持。分数越高，表明个体能够从家庭中获得足够的情感安慰和实际帮助，为其心理发展提供坚实后盾；分数越低，可能说明家庭支持感较弱，需加强家庭成员间的互动和沟通。',
+        },
+        '人际协助': {
+            range: '6-30',
+            desc: '人际协助衡量个体在面对困难时向他人寻求帮助的能力。分数越高，表明个体在需要时善于运用社会支持资源，如朋友和同伴，有助于增强问题解决能力；分数越低，可能说明个体在困难时较少寻求帮助或不愿与他人合作。',
+        },
+        '先天与后天': {
+            range: '8-48',
+            desc: '先天与后天衡量个体对天赋与后天努力的看法。分数越高，说明个体更注重后天努力的作用，相信通过学习和实践可以弥补不足；分数较低可能反映出对先天能力的依赖，认为成功更多取决于天赋。',
+        },
+        '现在与将来': {
+            range: '6-36',
+            desc: '现在与将来衡量个体是否更关注短期行动与长期成长的平衡。分数越高，表明个体更加重视长期目标，并能够为未来的成长持续努力；分数较低可能说明个体更注重当下，对未来规划的意识较弱。',
+        },
+        '拥抱与拒绝学习': {
+            range: '6-36',
+            desc: '拥抱与拒绝学习衡量个体在面对学习机会时的态度。分数越高，说明个体更愿意接受新的知识与挑战，并将其视为成长的机会；分数较低可能表明个体对学习的兴趣不足或抗拒改变。',
+        },
+        '对于完美态度': {
+            range: '6-36',
+            desc: '对于完美态度衡量个体对追求完美的态度。分数越高，说明个体能够接受不完美，并更关注持续进步；分数较低可能反映出对完美的过度追求，可能导致行动的犹豫或对失败的恐惧。',
+        },
+        '失败与成长': {
+            range: '6-36',
+            desc: '失败与成长衡量个体对失败的看法。分数越高，表明个体将失败视为学习和成长的机会；分数较低可能说明个体害怕失败，容易因此退缩或否定自身能力。',
+        },
+        '积极与消极': {
+            range: '4-24',
+            desc: '积极与消极衡量个体在面对问题时的态度倾向。分数越高，说明个体在面对困难时更倾向于积极思考，寻找解决方案；分数较低可能表明个体更容易被负面情绪影响，缺乏信心。',
+        },
+        '开放与保守': {
+            range: '6-36',
+            desc: '开放与保守衡量个体在接纳新观念与尝试新事物时的态度。分数越高，说明个体愿意接受新事物，并从中学习；分数较低可能反映个体在面对新事物时较为保守或抵触。',
+        },
+        '坚持与放弃': {
+            range: '4-24',
+            desc: '坚持与放弃衡量个体在面对困难时的坚持程度。分数越高，说明个体更有毅力，能够坚持完成任务；分数较低可能表明个体在遇到挫折时更容易放弃，缺乏韧性。',
+        },
+    }
+
+
+    $(function () {
+        var page = $(".first-page");
+
+        setFirstPageData();
+        setSecondPageData();
+        setPageTableData();
+        setPageNumber();
+
+        function setFirstPageData() {
+            var studyAbility = PageData.find(function (f) {
+                return f.AbilityName === "BCAI"
+            });
+
+            if (studyAbility) {
+                var score = Math.floor(studyAbility.AbilityScore.Score);
+                $(".first-page .ability-index").text(score);
+                $(".first-page .exceedText span").text(Math.floor(studyAbility.AbilityScore.AbilityScorePercentage) + "%");
+                $('.userwrap').css('left', (score - 50) + "%");
+                if (score > 100) {
+                    $('.userwrap .exceedText').css("transform", "translateX(calc(-100% - 50px))");
+                }
+                $(".first-page .score-indication-content").html(function () {
+                    return ('大脑认知能力指数（BCAI <span style="color: #999">Brain Cognitive Ability Index</span>）表示了六岁的整体认知能力水平，反映了持续注意、分配注意、选择注意、控制冲动、信息更新、短时记忆、抵制诱惑这七个方面的能力的总和。分数越高，表示综合认知能力越强。六岁的 BCAI 分数为' +
+                        '<span style="color: #0086D7;">' + score + '</span>，等级为' +
+                        '<span style="color: #0086D7;">' + studyAbility.Abilitylevel.AbilityLevel + '</span>，超过' +
+                        '<span style="color: #0086D7;">' + Math.floor(studyAbility.AbilityScore.AbilityScorePercentage) + '</span>%同龄人。')
+                });
+            }
+
+            var abilityDesc = [];
+            Object.keys(Ability).forEach(function (item) {
+                var ability = PageData.find(function (f) {
+                    return f.AbilityName === item
+                });
+                if (ability) {
+                    if ($(page).find(".page-content").innerHeight() >= 1340) {
+                        page = addPage(page);
+                        $(page).find(".page-content").append(`<div class="summary-data"><div class="average"><div class="average-word">同龄人平均水平</div></div></div>`)
+                    }
+                    var percentage = Math.floor(ability.AbilityScore.AbilityScorePercentage);
+                    abilityDesc.push(`<p>${item + Ability[item]}六岁${item}表现${ability.Abilitylevel.Explain}，得分${Math.floor(ability.AbilityScore.Score)}，超过${percentage}%的同龄人；</p>`)
+                    $(page).find(".summary-data").append(function () {
+                        return `<div class="summary-data-content">
+							<img src="${FilterUrl(ability.AbilityDto.Icon)}" alt="">
+							<div class="histogram">
+								<span>${item}</span>
+								<span>${percentage}%</span>
+								<div class="histogram-percentage" style="background-color: ${ability.AbilityDto.Color};width: ${percentage}%;"></div>
+							</div>
+						</div>
+						<div class="summary-data-desc">${item + Ability[item]}六岁${item}表现${ability.Abilitylevel.Explain}，得分${Math.floor(ability.AbilityScore.Score)}，超过${percentage}%的同龄人；</div>
+						`
+                    });
+                }
+            });
+            /*console.log($(page).find(".page-content").innerHeight());
+            if ($(page).find(".page-content").innerHeight() >= 1300) {
+                page = addPage(page);
+            }
+            $(page).find(".page-content").append(`<div class="summary-data-desc">${abilityDesc.join("")}</div>`)*/
+        }
+
+        function setSecondPageData() {
+            $(page).find(".page-content").append(`<div class="page-label-title"><img src="https://cdn.iquizoo.com/static/img/report/simply/comprehensive-recommendations.png" alt="">综合建议</div><div class="ability-desc-list"></div>`)
+            Object.keys(Ability).forEach(function (item) {
+                var ability = PageData.find(function (f) {
+                    return f.AbilityType === 2 && f.AbilityName === item
+                });
+                console.log(ability);
+                if (ability) {
+                    if ($(page).find(".page-content").innerHeight() >= 1260) {
+                        page = addPage(page);
+                        $(page).find(".page-content").append(`<div class="ability-desc-list"></div>`);
+                    }
+                    var content = ability.Abilitylevel.AbilitylevelReference.find(function (f) {
+                        return f.ReferenceType === "suggestion"
+                    }) || {};
+                    $(page).find(".ability-desc-list").append(`<div class="competence-name"  style="background-color: ${ability.AbilityDto.Color};">${item} ${ability.Abilitylevel.AbilityLevel}</div>
+					<div class="competence-word" style="margin: 50px auto;">${content.Content || ''}</div>`);
+                }
+            });
+        }
+
+        function setPageTableData() {
+            var resilienceList = PageData.filter(function (f) {
+                return f.PreAbility && f.PreAbility.AbilityName === "心理韧性"
+            });
+            var growthOrientedList = PageData.filter(function (f) {
+                return f.PreAbility && f.PreAbility.AbilityName === "成长型思维"
+            });
+
+            if (resilienceList.length) {
+                $(".page-table-box.resilience").append(function () {
+                    return `<ul>
+					<li>心理韧性总分</li>
+					<li class="total-score"></li>
+					<li>27-135</li>
+					<li>心理韧性总分反映了个体在面对压力、困难或挫折时的整体适应能力与应对能力。分数越高，表明个体在情绪调节、目标专注、积极认知以及获得外部支持等方面表现出更强的综合能力，能够更有效地应对挑战并从逆境中成长。分数较低可能意味着个体在某些维度上存在短板，如缺乏情绪控制或积极思维能力，或者在面对问题时较少利用外部资源，建议结合各维度分数进行针对性提升。</li>
+				</ul>`
+                });
+                var totalScore = 0;
+                $(".page-table-box.resilience").append(function () {
+                    return resilienceList.map(function (item) {
+                        totalScore += item.AbilityScore.Score;
+                        return `<ul>
+									<li>${item.AbilityName}</li>
+									<li>${Math.floor(item.AbilityScore.Score)}</li>
+									<li>${Table[item.AbilityName].range}</li>
+									<li>${Table[item.AbilityName].desc}</li>
+								</ul>`
+                    }).join("");
+                });
+                $(".page-table-box.resilience .total-score").text(Math.floor(totalScore));
+            } else {
+                $(".page-table-box.resilience").parents(".page").hide();
+            }
+
+            if (growthOrientedList.length) {
+                $(".page-table-box.growth-oriented").append(function () {
+                    return `<ul>
+					<li>成长型思维总分</li>
+					<li class="total-score"></li>
+					<li>46-276</li>
+					<li>成长型思维总分反映个体整体思维模式的倾向性。分数越高，表明个体更倾向于相信努力可以改变能力和智力，并乐于接受挑战；分数较低则说明个体可能倾向于认为能力是固定的，面对失败时更容易退缩。</li>
+				</ul>`
+                });
+                var totalScore = 0;
+                $(".page-table-box.growth-oriented").append(function () {
+                    return growthOrientedList.map(function (item) {
+                        totalScore += item.AbilityScore.Score;
+                        return `<ul>
+									<li>${item.AbilityName}</li>
+									<li>${Math.floor(item.AbilityScore.Score)}</li>
+									<li>${Table[item.AbilityName].range}</li>
+									<li>${Table[item.AbilityName].desc}</li>
+								</ul>`
+                    }).join("");
+                });
+                $(".page-table-box.growth-oriented .total-score").text(Math.floor(totalScore));
+            } else {
+                $(".page-table-box.growth-oriented").parents(".page").hide();
+            }
+        }
+
+        function addPage(jqDom) {
+            var html = `<div class="page"><!--<img class="page-logo" src="https://cdn.iquizoo.com/static/img/report/personal/logo3.png" alt="">--><div class="page-content" style="padding-top: 1px;"></div><div class="page-number"><span></span><div class="copyright"><span></span><img src="https://cdn.iquizoo.com/static/img/report/simply/copyright.png" alt=""></div></div></div>`;
+            return $(jqDom).after(html).next();
+        }
+
+        function setPageNumber() {
+            $(".page-number:visible").each(function (index) {
+                $(this).children("span").text(index + 1);
+                $(this).find(".copyright span").text("COPYRIGHT " + new Date().getFullYear())
+            })
+        }
+    });
+
+    function FilterUrl(value, storage = false) {
+        if (!value) return ''
+        if (value.slice(0, 4) === 'http' || ['data:', 'blob:'].includes(value.slice(0, 5))) return value
+        if (value[0] !== '/') {
+            value = '/' + value
+        }
+        return 'https://storage.iquizoo.com' + value
+    }
+</script>
+</html>
